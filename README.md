@@ -1,6 +1,6 @@
 # Device Detector
 
-![Build](https://github.com/mngsk/device-detector/workflows/Build/badge.svg)
+![build](https://github.com/mngsk/device-detector/workflows/build/badge.svg)
 
 The Universal Device Detection library that parses User Agents and detects devices (desktop, tablet, mobile, tv, cars, console, etc.), clients (browsers, feed readers, media players, PIMs, ...), operating systems, brands and models.
 
