@@ -1,0 +1,127 @@
+
+Android:
+  - Android
+  - CyanogenMod
+  - Fire OS
+  - MildWild
+  - MocorDroid
+  - RazoDroiD
+  - Remix OS
+  - YunOS
+
+AmigaOS:
+  - AmigaOS
+  - MorphOS
+
+Apple TV:
+  - Apple TV
+
+BlackBerry:
+  - BlackBerry OS
+  - BlackBerry Tablet OS
+
+Brew:
+  - Brew
+
+BeOS:
+  - BeOS
+  - Haiku OS
+
+Chrome OS:
+  - Chrome OS
+
+Firefox OS:
+  - Firefox OS
+  - KaiOS
+
+Gaming Console:
+  - Nintendo
+  - PlayStation
+  - Xbox
+
+Google TV:
+  - Google TV
+
+IBM:
+  - OS/2
+
+iOS:
+  - iOS
+
+RISC OS:
+  - RISC OS
+
+GNU/Linux:
+  - Arch Linux
+  - BackTrack
+  - CentOS
+  - Debian
+  - Fedora
+  - Gentoo
+  - GNU/Linux
+  - Knoppix
+  - Kubuntu
+  - Lubuntu
+  - Mandriva
+  - Mint
+  - Ordissimo
+  - Red Hat
+  - Sabayon
+  - Sailfish OS
+  - Slackware
+  - SUSE
+  - Ubuntu
+  - VectorLinux
+  - Xubuntu
+
+Mac:
+  - Mac
+
+Mobile Gaming Console:
+  - Nintendo Mobile
+  - PlayStation Portable
+
+Real-time OS:
+  - MTK / Nucleus
+  - ThreadX
+
+Other Mobile:
+  - Bada
+  - Maemo
+  - MeeGo
+  - palmOS
+  - Tizen
+  - webOS
+
+Symbian:
+  - Symbian
+  - Symbian 3
+  - Symbian OS
+  - Symbian OS Series 40
+  - Symbian OS Series 60
+
+Unix:
+  - AIX
+  - DragonFly
+  - FreeBSD
+  - HP-UX
+  - Inferno
+  - IRIX
+  - NetBSD
+  - OpenBSD
+  - OSF1
+  - Solaris
+  - Syllable
+
+WebTV:
+  - WebTV
+
+Windows:
+  - Windows
+
+Windows Mobile:
+  - Windows CE
+  - Windows IoT
+  - Windows Mobile
+  - Windows Phone
+  - Windows RT
