@@ -1,25 +1,21 @@
 package io.github.mngsk.devicedetector.client.bot;
 
-import java.io.IOException;
 import java.util.Optional;
 import java.util.regex.Matcher;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import io.github.mngsk.devicedetector.client.AbstractClientParser;
 import io.github.mngsk.devicedetector.client.Client;
 
 public class BotParser extends AbstractClientParser<BotRegex> {
 
-	public BotParser()
-			throws JsonParseException, JsonMappingException, IOException {
+	public BotParser() {
 		this(new ObjectMapper(new YAMLFactory()));
 	}
 
-	public BotParser(ObjectMapper objectMapper)
-			throws JsonParseException, JsonMappingException, IOException {
+	public BotParser(ObjectMapper objectMapper) {
 		super("bot", "regexes/bots.yml", objectMapper);
 	}
 

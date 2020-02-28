@@ -8,29 +8,30 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.MapType;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import io.github.mngsk.devicedetector.util.AbstractParser;
 
 public class AbstractDeviceParser extends AbstractParser<Device> {
 
 	private Map<String, DeviceRegex> devices;
 
-	public AbstractDeviceParser(String fixtureFile)
-			throws JsonParseException, JsonMappingException, IOException {
+	public AbstractDeviceParser(String fixtureFile) {
 		this(fixtureFile, new ObjectMapper(new YAMLFactory()));
 	}
 
-	public AbstractDeviceParser(String fixtureFile, ObjectMapper objectMapper)
-			throws JsonParseException, JsonMappingException, IOException {
+	public AbstractDeviceParser(String fixtureFile, ObjectMapper objectMapper) {
 		InputStream inputStream = getClass().getClassLoader()
 				.getResourceAsStream(fixtureFile);
 		MapType mapType = objectMapper.getTypeFactory().constructMapType(
 				TreeMap.class, String.class, DeviceRegex.class);
-		this.devices = objectMapper.readValue(inputStream, mapType);
+		try {
+			this.devices = objectMapper.readValue(inputStream, mapType);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not load " + fixtureFile, e);
+		}
 	}
 
 	@Override

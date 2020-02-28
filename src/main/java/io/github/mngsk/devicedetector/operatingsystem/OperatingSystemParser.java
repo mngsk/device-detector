@@ -8,12 +8,11 @@ import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.regex.Matcher;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import io.github.mngsk.devicedetector.util.AbstractParser;
 
 public class OperatingSystemParser extends AbstractParser<OperatingSystem> {
@@ -22,32 +21,47 @@ public class OperatingSystemParser extends AbstractParser<OperatingSystem> {
 	private Map<String, List<String>> families;
 	private List<PlatformRegex> platforms;
 
-	public OperatingSystemParser()
-			throws JsonParseException, JsonMappingException, IOException {
+	public OperatingSystemParser() {
 		this(new ObjectMapper(new YAMLFactory()));
 	}
 
-	public OperatingSystemParser(ObjectMapper objectMapper)
-			throws JsonParseException, JsonMappingException, IOException {
+	public OperatingSystemParser(ObjectMapper objectMapper) {
+		String fixtureFile;
 		InputStream inputStream;
 		CollectionType listType;
 
+		fixtureFile = "regexes/oss.yml";
 		inputStream = getClass().getClassLoader()
-				.getResourceAsStream("regexes/oss.yml");
+				.getResourceAsStream(fixtureFile);
 		listType = objectMapper.getTypeFactory().constructCollectionType(
 				List.class, OperatingSystemRegex.class);
-		this.operatingSystems = objectMapper.readValue(inputStream, listType);
+		try {
+			this.operatingSystems = objectMapper.readValue(inputStream,
+					listType);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not load " + fixtureFile, e);
+		}
 
+		fixtureFile = "regexes/ossfamilies.yml";
 		inputStream = getClass().getClassLoader()
-				.getResourceAsStream("regexes/ossfamilies.yml");
+				.getResourceAsStream(fixtureFile);
 		TypeReference<Map<String, List<String>>> mapType = new TypeReference<Map<String, List<String>>>() {};
-		this.families = objectMapper.readValue(inputStream, mapType);
+		try {
+			this.families = objectMapper.readValue(inputStream, mapType);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not load " + fixtureFile, e);
+		}
 
+		fixtureFile = "regexes/ossplatforms.yml";
 		inputStream = getClass().getClassLoader()
-				.getResourceAsStream("regexes/ossplatforms.yml");
+				.getResourceAsStream(fixtureFile);
 		listType = objectMapper.getTypeFactory()
 				.constructCollectionType(List.class, PlatformRegex.class);
-		this.platforms = objectMapper.readValue(inputStream, listType);
+		try {
+			this.platforms = objectMapper.readValue(inputStream, listType);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not load " + fixtureFile, e);
+		}
 	}
 
 	@Override

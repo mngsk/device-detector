@@ -9,12 +9,11 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import io.github.mngsk.devicedetector.client.AbstractClientParser;
 import io.github.mngsk.devicedetector.client.Client;
 
@@ -23,28 +22,37 @@ public class BrowserParser extends AbstractClientParser<BrowserRegex> {
 	private List<EngineRegex> engines;
 	private Map<String, List<String>> families;
 
-	public BrowserParser()
-			throws JsonParseException, JsonMappingException, IOException {
+	public BrowserParser() {
 		this(new ObjectMapper(new YAMLFactory()));
 	}
 
-	public BrowserParser(ObjectMapper objectMapper)
-			throws JsonParseException, JsonMappingException, IOException {
+	public BrowserParser(ObjectMapper objectMapper) {
 		super("browser", "regexes/client/browsers.yml", objectMapper);
 
+		String fixtureFile;
 		InputStream inputStream;
 		CollectionType listType;
 
+		fixtureFile = "regexes/client/browser_engine.yml";
 		inputStream = this.getClass().getClassLoader()
-				.getResourceAsStream("regexes/client/browser_engine.yml");
+				.getResourceAsStream(fixtureFile);
 		listType = objectMapper.getTypeFactory()
 				.constructCollectionType(List.class, EngineRegex.class);
-		this.engines = objectMapper.readValue(inputStream, listType);
+		try {
+			this.engines = objectMapper.readValue(inputStream, listType);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not load " + fixtureFile, e);
+		}
 
+		fixtureFile = "regexes/client/browser_family.yml";
 		inputStream = this.getClass().getClassLoader()
-				.getResourceAsStream("regexes/client/browser_family.yml");
+				.getResourceAsStream(fixtureFile);
 		TypeReference<Map<String, List<String>>> mapType = new TypeReference<Map<String, List<String>>>() {};
-		this.families = objectMapper.readValue(inputStream, mapType);
+		try {
+			this.families = objectMapper.readValue(inputStream, mapType);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not load " + fixtureFile, e);
+		}
 	}
 
 	@Override

@@ -1,15 +1,13 @@
 package io.github.mngsk.devicedetector;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import io.github.mngsk.devicedetector.client.AbstractClientParser;
 import io.github.mngsk.devicedetector.client.Client;
 import io.github.mngsk.devicedetector.client.FeedReaderClientParser;
@@ -291,8 +289,7 @@ public class DeviceDetector {
 			return this;
 		}
 
-		public DeviceDetector build()
-				throws JsonParseException, JsonMappingException, IOException {
+		public DeviceDetector build() {
 			ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory())
 					.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 

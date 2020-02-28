@@ -7,11 +7,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import io.github.mngsk.devicedetector.util.AbstractParser;
 
 public abstract class AbstractClientParser<T extends ClientRegex>
@@ -20,14 +19,12 @@ public abstract class AbstractClientParser<T extends ClientRegex>
 	protected String type;
 	protected List<T> regexes;
 
-	public AbstractClientParser(String type, String fixtureFile)
-			throws JsonParseException, JsonMappingException, IOException {
+	public AbstractClientParser(String type, String fixtureFile) {
 		this(type, fixtureFile, new ObjectMapper(new YAMLFactory()));
 	}
 
 	public AbstractClientParser(String type, String fixtureFile,
-			ObjectMapper objectMapper)
-			throws JsonParseException, JsonMappingException, IOException {
+			ObjectMapper objectMapper) {
 		this.type = type;
 
 		InputStream inputStream = getClass().getClassLoader()
@@ -36,7 +33,11 @@ public abstract class AbstractClientParser<T extends ClientRegex>
 				.getGenericSuperclass()).getActualTypeArguments()[0];
 		CollectionType listType = objectMapper.getTypeFactory()
 				.constructCollectionType(List.class, regexClass);
-		this.regexes = objectMapper.readValue(inputStream, listType);
+		try {
+			this.regexes = objectMapper.readValue(inputStream, listType);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not load " + fixtureFile, e);
+		}
 	}
 
 	@Override
