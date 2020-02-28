@@ -8,7 +8,7 @@ public abstract class AbstractParser<T> {
 	public abstract Optional<T> parse(String userAgent);
 
 	protected String buildByMatch(String item, Matcher matcher) {
-		if (item == null || item.trim().isEmpty()) {
+		if (item == null) {
 			return null;
 		}
 
