@@ -214,6 +214,11 @@ public class Detection {
 	}
 
 	@JsonIgnore
+	public boolean isTouchEnabled() {
+		return touchEnabledPattern.matcher(userAgent).find();
+	}
+
+	@JsonIgnore
 	public boolean isSmartphone() {
 		return this.device != null ? this.device.getType().equals("smartphone")
 				: false;
