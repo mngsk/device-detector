@@ -45,6 +45,10 @@ public class DeviceDetector {
 	}
 
 	public Detection detect(String userAgent) {
+		if (userAgent == null || userAgent.trim().isEmpty()) {
+			throw new IllegalArgumentException("The user agent is required");
+		}
+
 		Optional<Device> device = Optional.empty();
 		for (AbstractDeviceParser parser : this.deviceParsers) {
 			Optional<Device> d = parser.parse(userAgent);
