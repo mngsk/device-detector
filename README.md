@@ -1,6 +1,9 @@
 # Device Detector
 
-![build](https://github.com/mngsk/device-detector/workflows/build/badge.svg)
+[![build](https://img.shields.io/github/workflow/status/mngsk/device-detector/build)](https://github.com/mngsk/device-detector/actions?query=workflow%3Abuild)
+[![release](https://img.shields.io/github/v/release/mngsk/device-detector)](https://github.com/mngsk/device-detector/releases)
+[![maven central](https://img.shields.io/maven-central/v/io.github.mngsk/device-detector)](https://search.maven.org/classic/#search|gav|1|g:"io.github.mngsk"%20AND%20a:"device-detector")
+[![license](https://img.shields.io/github/license/mngsk/device-detector)](https://www.gnu.org/licenses/lgpl-3.0.html)
 
 The Universal Device Detection library that parses User Agents and detects devices (desktop, tablet, mobile, tv, cars, console, etc.), clients (browsers, feed readers, media players, PIMs, ...), operating systems, brands and models.
 
