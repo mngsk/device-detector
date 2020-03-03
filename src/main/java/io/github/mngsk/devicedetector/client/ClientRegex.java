@@ -37,7 +37,8 @@ public class ClientRegex {
 	}
 
 	public void setVersion(String version) {
-		this.version = version;
+		// the fixture files uses nulls and empty strings interchangeably
+		this.version = version == null ? "" : version;
 	}
 
 	public Pattern getPattern() {
