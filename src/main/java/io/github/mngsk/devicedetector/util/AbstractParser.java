@@ -3,6 +3,8 @@ package io.github.mngsk.devicedetector.util;
 import java.util.Optional;
 import java.util.regex.Matcher;
 
+import org.apache.commons.lang3.StringUtils;
+
 public abstract class AbstractParser<T> {
 
 	public abstract Optional<T> parse(String userAgent);
@@ -35,8 +37,7 @@ public abstract class AbstractParser<T> {
 		}
 
 		version = version.replace("_", ".");
-		// TODO truncate maxMinorParts
-		return version;
+		return StringUtils.strip(version, " .");
 	}
 
 }
