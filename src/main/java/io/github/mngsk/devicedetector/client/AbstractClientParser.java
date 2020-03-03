@@ -45,7 +45,7 @@ public abstract class AbstractClientParser<T extends ClientRegex>
 		for (T regex : this.regexes) {
 			Matcher matcher = regex.getPattern().matcher(userAgent);
 			if (matcher.find()) {
-				String name = regex.getName();
+				String name = super.buildByMatch(regex.getName(), matcher);
 
 				String version = super.buildVersion(regex.getVersion(),
 						matcher);
