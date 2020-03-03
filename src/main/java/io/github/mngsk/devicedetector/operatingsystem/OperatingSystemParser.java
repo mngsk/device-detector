@@ -83,6 +83,14 @@ public class OperatingSystemParser extends AbstractParser<OperatingSystem> {
 			return Optional.empty();
 		}
 
+		if (name.equals("lubuntu")) {
+			name = "Lubuntu";
+		} else if (name.equals("debian")) {
+			name = "Debian";
+		} else if (name.equals("YunOS")) {
+			name = "YunOs";
+		}
+
 		String family = null;
 		for (Entry<String, List<String>> entry : this.families.entrySet()) {
 			if (entry.getValue().contains(name)) {
