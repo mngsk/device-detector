@@ -134,7 +134,7 @@ public class Detection {
 
 		Optional<ComparableVersion> osVersion = Optional.empty();
 		if (this.operatingSystem != null
-				&& this.operatingSystem.getVersion().isPresent()) {
+				&& !this.operatingSystem.getVersion().orElse("").isEmpty()) {
 			osVersion = Optional.of(new ComparableVersion(
 					this.operatingSystem.getVersion().get()));
 		}
