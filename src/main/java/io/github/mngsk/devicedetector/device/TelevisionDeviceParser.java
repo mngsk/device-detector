@@ -8,7 +8,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class TelevisionDeviceParser extends AbstractDeviceParser {
 
 	private Pattern hbbtvPattern = Pattern.compile(
-			"HbbTV/([1-9]{1}(?:\\.[0-9]{1}){1,2})", Pattern.CASE_INSENSITIVE);
+			"(?:^|[^A-Z0-9\\-_]|[^A-Z0-9\\-]_|sprd-)(?:HbbTV/([1-9]{1}(?:\\.[0-9]{1}){1,2}))",
+			Pattern.CASE_INSENSITIVE);
 
 	public TelevisionDeviceParser() {
 		super("regexes/device/televisions.yml");

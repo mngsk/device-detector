@@ -18,19 +18,24 @@ import io.github.mngsk.devicedetector.operatingsystem.VendorFragmentParser;
 public class Detection {
 
 	private static VendorFragmentParser vendorFragmentParser = new VendorFragmentParser();
-	private static Pattern touchEnabledPattern = Pattern.compile("Touch");
-	private static Pattern androidTabletPattern = Pattern
-			.compile("Android( [\\.0-9]+)?; Tablet;", Pattern.CASE_INSENSITIVE);
-	private static Pattern androidMobilePattern = Pattern
-			.compile("Android( [\\.0-9]+)?; Mobile;", Pattern.CASE_INSENSITIVE);
-	private static Pattern chromeSmartphonePattern = Pattern
-			.compile("Chrome/[\\.0-9]* Mobile", Pattern.CASE_INSENSITIVE);
-	private static Pattern chromeTabletPattern = Pattern
-			.compile("Chrome/[\\.0-9]* (?!Mobile)", Pattern.CASE_INSENSITIVE);
-	private static Pattern operaTabletPattern = Pattern.compile("Opera Tablet",
+	private static Pattern touchEnabledPattern = Pattern
+			.compile("(?:^|[^A-Z_-])(?:Touch)");
+	private static Pattern androidTabletPattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Android( [\\.0-9]+)?; Tablet;)",
 			Pattern.CASE_INSENSITIVE);
-	private static Pattern operaTvPattern = Pattern.compile("Opera TV Store",
+	private static Pattern androidMobilePattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Android( [\\.0-9]+)?; Mobile;)",
 			Pattern.CASE_INSENSITIVE);
+	private static Pattern chromeSmartphonePattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* Mobile)",
+			Pattern.CASE_INSENSITIVE);
+	private static Pattern chromeTabletPattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* (?!Mobile))",
+			Pattern.CASE_INSENSITIVE);
+	private static Pattern operaTabletPattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Opera Tablet)", Pattern.CASE_INSENSITIVE);
+	private static Pattern operaTvPattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Opera TV Store)", Pattern.CASE_INSENSITIVE);
 	private static List<String> mobileDeviceTypes = Arrays.asList(
 			"feature phone", "smartphone", "tablet", "phablet", "camera",
 			"portable media player");
