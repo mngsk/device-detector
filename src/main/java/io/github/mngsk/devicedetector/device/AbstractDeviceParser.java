@@ -99,7 +99,7 @@ public class AbstractDeviceParser extends AbstractParser<Device> {
 			return null;
 		}
 
-		return model;
+		return model.trim().isEmpty() ? null : model.trim();
 	}
 
 }
