@@ -7,7 +7,7 @@
 
 The Universal Device Detection library that parses User Agents and detects devices (desktop, tablet, mobile, tv, cars, console, etc.), clients (browsers, feed readers, media players, PIMs, ...), operating systems, brands and models.
 
-This project is a Java adaptation of [Matomo Device Detector](https://github.com/matomo-org/device-detector), and although it is not a direct translation of the original code, it uses the same regex YAML files.
+This project is a Java adaptation of [Matomo Device Detector](https://github.com/matomo-org/device-detector).
 
 ## Usage
 
@@ -96,7 +96,7 @@ Audacious, Banshee, Boxee, Clementine, Deezer, FlyCast, Foobar2000, Google Podca
 
 ### List of detected mobile apps:
 
-AndroidDownloadManager, AntennaPod, Apple News, Baidu Box App, BeyondPod, BingWebApp, bPod, CastBox, Castro, Castro 2, CrosswalkApp, DoggCatcher, douban App, Facebook, Facebook Messenger, FeedR, Flipboard App, Google Go, Google Play Newsstand, Google Plus, Google Search App, iCatcher, Instacast, Instagram App, Line, NewsArticle App, Overcast, Pinterest, Player FM, Pocket Casts, Podcast & Radio Addict, Podcast Republic, Podcasts, Podcat, Podcatcher Deluxe, Podkicker, RSSRadio, Sina Weibo, SogouSearch App, tieba, WeChat, WhatsApp, Yahoo! Japan, Yelp Mobile, YouTube  and *mobile apps using [AFNetworking](https://github.com/AFNetworking/AFNetworking)*
+AndroidDownloadManager, AntennaPod, Apple News, Baidu Box App, BeyondPod, BingWebApp, bPod, CastBox, Castro, Castro 2, CrosswalkApp, DoggCatcher, douban App, Facebook, Facebook Messenger, FeedR, Flipboard App, Google Go, Google Play Newsstand, Google Plus, Google Search App, iCatcher, Instacast, Instagram App, Line, NewsArticle App, Overcast, Pinterest, Player FM, Pocket Casts, Podcast & Radio Addict, Podcast Republic, Podcasts, Podcat, Podcatcher Deluxe, Podkicker, RSSRadio, Sina Weibo, SogouSearch App, tieba, WeChat, WhatsApp, Yahoo! Japan, Yelp Mobile, YouTube, and mobile apps using AFNetworking
 
 ### List of detected PIMs (personal information manager):
 
