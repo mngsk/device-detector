@@ -98,6 +98,7 @@ public class Detection {
 				&& this.operatingSystem.getFamily().orElse("").equals("Android")
 				&& this.client != null
 				&& this.client.getType().equals("browser")
+				&& ((Browser) this.client).getFamily().isPresent()
 				&& ((Browser) this.client).getFamily().get().equals("Chrome")) {
 			if (chromeSmartphonePattern.matcher(userAgent).find()) {
 				type = "smartphone";
