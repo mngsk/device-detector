@@ -95,6 +95,7 @@ public class AbstractDeviceParser extends AbstractParser<Device> {
 		}
 
 		model = model.replace("_", " ");
+		model = model.replaceAll("\\sTD$", "");
 		if (model.equals("Build")) {
 			return null;
 		}
