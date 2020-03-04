@@ -47,6 +47,9 @@ public class AbstractDeviceParser extends AbstractParser<Device> {
 				String type = device.getValue().getDevice();
 
 				String brand = device.getKey();
+				if (brand.equalsIgnoreCase("unknown")) {
+					brand = null;
+				}
 
 				String model = buildModel(
 						device.getValue().getModel().orElse(null), matcher);
@@ -72,6 +75,9 @@ public class AbstractDeviceParser extends AbstractParser<Device> {
 						.orElse(device.getValue().getDevice());
 
 				String brand = regex.getBrand().orElse(device.getKey());
+				if (brand.equalsIgnoreCase("unknown")) {
+					brand = null;
+				}
 
 				String model = buildModel(regex.getModel(), matcher);
 
