@@ -8,13 +8,16 @@ import java.util.regex.Pattern;
 import org.apache.maven.artifact.versioning.ComparableVersion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.github.mngsk.devicedetector.client.Client;
 import io.github.mngsk.devicedetector.client.browser.Browser;
 import io.github.mngsk.devicedetector.device.Device;
 import io.github.mngsk.devicedetector.operatingsystem.OperatingSystem;
+import io.github.mngsk.devicedetector.operatingsystem.VendorFragmentParser;
 
 public class Detection {
 
+	private static VendorFragmentParser vendorFragmentParser = new VendorFragmentParser();
 	private static Pattern touchEnabledPattern = Pattern.compile("Touch");
 	private static Pattern androidTabletPattern = Pattern
 			.compile("Android( [\\.0-9]+)?; Tablet;", Pattern.CASE_INSENSITIVE);
@@ -80,6 +83,10 @@ public class Detection {
 			type = device.getType();
 			brand = device.getBrand().orElse(null);
 			model = device.getModel().orElse(null);
+		}
+
+		if (brand == null) {
+			brand = vendorFragmentParser.parse(this.userAgent).orElse(null);
 		}
 
 		// Assume all devices running iOS / Mac OS are from Apple
