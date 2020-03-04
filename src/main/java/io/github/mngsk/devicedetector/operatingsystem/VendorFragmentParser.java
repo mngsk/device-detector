@@ -2,10 +2,10 @@ package io.github.mngsk.devicedetector.operatingsystem;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
-import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,8 +27,8 @@ public class VendorFragmentParser extends AbstractParser<String> {
 		String fixtureFile = "regexes/vendorfragments.yml";
 		InputStream inputStream = getClass().getClassLoader()
 				.getResourceAsStream(fixtureFile);
-		MapType mapType = objectMapper.getTypeFactory()
-				.constructMapType(TreeMap.class, String.class, String[].class);
+		MapType mapType = objectMapper.getTypeFactory().constructMapType(
+				LinkedHashMap.class, String.class, String[].class);
 		try {
 			this.brands = objectMapper.readValue(inputStream, mapType);
 		} catch (IOException e) {

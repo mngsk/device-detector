@@ -2,10 +2,10 @@ package io.github.mngsk.devicedetector.device;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
-import java.util.TreeMap;
 import java.util.regex.Matcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,7 +26,7 @@ public class AbstractDeviceParser extends AbstractParser<Device> {
 		InputStream inputStream = getClass().getClassLoader()
 				.getResourceAsStream(fixtureFile);
 		MapType mapType = objectMapper.getTypeFactory().constructMapType(
-				TreeMap.class, String.class, DeviceRegex.class);
+				LinkedHashMap.class, String.class, DeviceRegex.class);
 		try {
 			this.devices = objectMapper.readValue(inputStream, mapType);
 		} catch (IOException e) {
