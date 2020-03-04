@@ -66,7 +66,7 @@ Contrary to the original PHP implementation, this project does not include any c
 
 ## Tests
 
-The project has no test right now. Contributions are welcome.
+This project uses the YAML fixture files of the original PHP version. To run the tests, execute `mvn test` from the project's root directory.
 
 ## What Device Detector is able to detect
 
