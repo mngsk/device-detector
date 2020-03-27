@@ -1006,6 +1006,12 @@
   engine:
     default: '' # multi engine -- WebKit or Blink
 
+- regex: '2345Explorer/(\d+[\.\d]+)'
+  name: '2345 Browser'
+  version: '$1'
+  engine:
+    default: '' # multi engine -- WebKit or Blink
+
 # QtWebEngine
 - regex: 'QtWebEngine/(\d+[\.\d]+)'
   name: 'QtWebEngine'
