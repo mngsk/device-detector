@@ -29,3 +29,7 @@ hs_err_pid*
 
 # Maven target directory
 /target/
+
+# Development and release scripts and instructions
+import-regexes.sh
+release-process.md
