@@ -30,6 +30,7 @@ public class DeviceMixin {
 			NUMERIC_TYPES.put("12", "wearable");
 
 			SHORT_BRAND_NAMES = new HashMap<>();
+      SHORT_BRAND_NAMES.put("36", "360");
 			SHORT_BRAND_NAMES.put("3Q", "3Q");
 			SHORT_BRAND_NAMES.put("4G", "4Good");
 			SHORT_BRAND_NAMES.put("AE", "Ace");
@@ -52,6 +53,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("A1", "Altech UEC");
 			SHORT_BRAND_NAMES.put("A5", "altron");
 			SHORT_BRAND_NAMES.put("AN", "Arnova");
+      SHORT_BRAND_NAMES.put("7A", "Anry");
 			SHORT_BRAND_NAMES.put("5A", "ArmPhone");
 			SHORT_BRAND_NAMES.put("2A", "Atom");
 			SHORT_BRAND_NAMES.put("KN", "Amazon");
@@ -62,6 +64,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("AS", "ARRIS");
 			SHORT_BRAND_NAMES.put("AB", "Arian Space");
 			SHORT_BRAND_NAMES.put("AT", "Airties");
+      SHORT_BRAND_NAMES.put("6A", "AT&T");
 			SHORT_BRAND_NAMES.put("A6", "Ark");
 			SHORT_BRAND_NAMES.put("A4", "Ask");
 			SHORT_BRAND_NAMES.put("A8", "Assistant");
@@ -77,6 +80,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("B5", "Beeline");
 			SHORT_BRAND_NAMES.put("BI", "Bird");
 			SHORT_BRAND_NAMES.put("BT", "Bitel");
+      SHORT_BRAND_NAMES.put("B8", "BIHEE");
       SHORT_BRAND_NAMES.put("B7", "Bitmore");
 			SHORT_BRAND_NAMES.put("BG", "BGH");
 			SHORT_BRAND_NAMES.put("BL", "Beetel");
@@ -113,6 +117,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("CH", "Cherry Mobile");
 			SHORT_BRAND_NAMES.put("1C", "Chuwi");
 			SHORT_BRAND_NAMES.put("L8", "Clarmin");
+      SHORT_BRAND_NAMES.put("C0", "Clout");
 			SHORT_BRAND_NAMES.put("CK", "Cricket");
 			SHORT_BRAND_NAMES.put("C1", "Crosscall");
 			SHORT_BRAND_NAMES.put("CL", "Compal");
@@ -122,6 +127,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("CR", "CreNova");
 			SHORT_BRAND_NAMES.put("CT", "Capitel");
 			SHORT_BRAND_NAMES.put("CQ", "Compaq");
+      SHORT_BRAND_NAMES.put("3C", "Contixo");
 			SHORT_BRAND_NAMES.put("CO", "Coolpad");
 			SHORT_BRAND_NAMES.put("C5", "Condor");
 			SHORT_BRAND_NAMES.put("CW", "Cowon");
@@ -161,6 +167,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("D8", "Droxio");
 			SHORT_BRAND_NAMES.put("DU", "Dune HD");
 			SHORT_BRAND_NAMES.put("EB", "E-Boda");
+      SHORT_BRAND_NAMES.put("2E", "E-Ceros");
 			SHORT_BRAND_NAMES.put("EA", "EBEST");
 			SHORT_BRAND_NAMES.put("EC", "Ericsson");
 			SHORT_BRAND_NAMES.put("E7", "Ergo");
@@ -176,6 +183,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("EP", "Easypix");
 			SHORT_BRAND_NAMES.put("EK", "EKO");
 			SHORT_BRAND_NAMES.put("E1", "Energy Sistem");
+      SHORT_BRAND_NAMES.put("3E", "Enot");
 			SHORT_BRAND_NAMES.put("ER", "Ericy");
 			SHORT_BRAND_NAMES.put("EE", "Essential");
 			SHORT_BRAND_NAMES.put("EN", "Eton");
@@ -224,6 +232,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("G1", "GoMobile");
 			SHORT_BRAND_NAMES.put("GR", "Gradiente");
 			SHORT_BRAND_NAMES.put("GP", "Grape");
+      SHORT_BRAND_NAMES.put("G6", "Gree");
       SHORT_BRAND_NAMES.put("G0", "Goophone");
 			SHORT_BRAND_NAMES.put("GU", "Grundig");
 			SHORT_BRAND_NAMES.put("HF", "Hafury");
@@ -236,6 +245,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("H1", "Hoffmann");
 			SHORT_BRAND_NAMES.put("HM", "Homtom");
 			SHORT_BRAND_NAMES.put("HO", "Hosin");
+      SHORT_BRAND_NAMES.put("HW", "How");
 			SHORT_BRAND_NAMES.put("HZ", "Hoozo");
 			SHORT_BRAND_NAMES.put("HP", "HP");
 			SHORT_BRAND_NAMES.put("HT", "HTC");
@@ -283,6 +293,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("JO", "Jolla");
 			SHORT_BRAND_NAMES.put("J5", "Just5");
 			SHORT_BRAND_NAMES.put("JF", "JFone");
+      SHORT_BRAND_NAMES.put("JK", "JKL");
 			SHORT_BRAND_NAMES.put("KL", "Kalley");
 			SHORT_BRAND_NAMES.put("K4", "Kaan");
 			SHORT_BRAND_NAMES.put("K7", "Kaiomy");
@@ -298,6 +309,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("KO", "Konka");
 			SHORT_BRAND_NAMES.put("KM", "Komu");
 			SHORT_BRAND_NAMES.put("KB", "Koobee");
+      SHORT_BRAND_NAMES.put("K9", "Kooper");
 			SHORT_BRAND_NAMES.put("KT", "K-Touch");
 			SHORT_BRAND_NAMES.put("KH", "KT-Tech");
 			SHORT_BRAND_NAMES.put("KK", "Kodak");
@@ -327,6 +339,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("LN", "Lenco");
 			SHORT_BRAND_NAMES.put("LT", "Leotec");
 			SHORT_BRAND_NAMES.put("L7", "Lephone");
+      SHORT_BRAND_NAMES.put("LZ", "Lesia");
 			SHORT_BRAND_NAMES.put("LP", "Le Pan");
 			SHORT_BRAND_NAMES.put("LG", "LG");
 			SHORT_BRAND_NAMES.put("LI", "Lingwin");
@@ -338,14 +351,17 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("LU", "Lumus");
 			SHORT_BRAND_NAMES.put("L9", "Luna");
 			SHORT_BRAND_NAMES.put("MN", "M4tel");
+      SHORT_BRAND_NAMES.put("XM", "Macoox");
 			SHORT_BRAND_NAMES.put("MJ", "Majestic");
 			SHORT_BRAND_NAMES.put("MA", "Manta Multimedia");
+      SHORT_BRAND_NAMES.put("6X", "Maxtron");
 			SHORT_BRAND_NAMES.put("5M", "Mann");
 			SHORT_BRAND_NAMES.put("2M", "Masstel");
 			SHORT_BRAND_NAMES.put("MW", "Maxwest");
 			SHORT_BRAND_NAMES.put("7M", "Maxcom");
 			SHORT_BRAND_NAMES.put("M0", "Maze");
 			SHORT_BRAND_NAMES.put("MB", "Mobistel");
+      SHORT_BRAND_NAMES.put("9M", "Mobo");
 			SHORT_BRAND_NAMES.put("0M", "Mecool");
 			SHORT_BRAND_NAMES.put("M3", "Mecer");
 			SHORT_BRAND_NAMES.put("MD", "Medion");
@@ -355,6 +371,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("ME", "Metz");
 			SHORT_BRAND_NAMES.put("MX", "MEU");
 			SHORT_BRAND_NAMES.put("MI", "MicroMax");
+      SHORT_BRAND_NAMES.put("8M", "Mito");
 			SHORT_BRAND_NAMES.put("M5", "MIXC");
 			SHORT_BRAND_NAMES.put("MH", "Mobiola");
 			SHORT_BRAND_NAMES.put("4M", "Mobicel");
@@ -364,6 +381,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("MO", "Mio");
 			SHORT_BRAND_NAMES.put("M7", "Miray");
 			SHORT_BRAND_NAMES.put("MM", "Mpman");
+      SHORT_BRAND_NAMES.put("LS", "MLS");
 			SHORT_BRAND_NAMES.put("M4", "Modecom");
 			SHORT_BRAND_NAMES.put("MF", "Mofut");
 			SHORT_BRAND_NAMES.put("MR", "Motorola");
@@ -382,6 +400,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("MG", "MyWigo");
 			SHORT_BRAND_NAMES.put("M8", "Myria");
 			SHORT_BRAND_NAMES.put("6M", "Mystery");
+      SHORT_BRAND_NAMES.put("1R", "Multilaser");
 			SHORT_BRAND_NAMES.put("N3", "Navon");
 			SHORT_BRAND_NAMES.put("N7", "National");
 			SHORT_BRAND_NAMES.put("N5", "NOA");
@@ -394,6 +413,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("N6", "Nobby");
 			SHORT_BRAND_NAMES.put("NO", "Nous");
 			SHORT_BRAND_NAMES.put("NI", "Nintendo");
+      SHORT_BRAND_NAMES.put("0N", "Newman");
 			SHORT_BRAND_NAMES.put("N1", "Noain");
 			SHORT_BRAND_NAMES.put("N2", "Nextbit");
 			SHORT_BRAND_NAMES.put("NK", "Nokia");
@@ -404,6 +424,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("NL", "NUU Mobile");
 			SHORT_BRAND_NAMES.put("NY", "NYX Mobile");
 			SHORT_BRAND_NAMES.put("NN", "Nikon");
+      SHORT_BRAND_NAMES.put("N9", "Newland");
 			SHORT_BRAND_NAMES.put("NW", "Newgen");
 			SHORT_BRAND_NAMES.put("NS", "NewsMy");
 			SHORT_BRAND_NAMES.put("NX", "Nexian");
@@ -414,9 +435,11 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("O1", "Odys");
 			SHORT_BRAND_NAMES.put("OD", "Onda");
 			SHORT_BRAND_NAMES.put("ON", "OnePlus");
+      SHORT_BRAND_NAMES.put("OX", "Onix");
 			SHORT_BRAND_NAMES.put("OP", "OPPO");
 			SHORT_BRAND_NAMES.put("O4", "ONN");
 			SHORT_BRAND_NAMES.put("OR", "Orange");
+      SHORT_BRAND_NAMES.put("O5", "Orbic");
 			SHORT_BRAND_NAMES.put("OS", "Ordissimo");
 			SHORT_BRAND_NAMES.put("OT", "O2");
 			SHORT_BRAND_NAMES.put("OK", "Ouki");
@@ -426,6 +449,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("OV", "Overmax");
 			SHORT_BRAND_NAMES.put("OY", "Oysters");
 			SHORT_BRAND_NAMES.put("OW", "öwn");
+      SHORT_BRAND_NAMES.put("O2", "Owwo");
 			SHORT_BRAND_NAMES.put("PN", "Panacom");
 			SHORT_BRAND_NAMES.put("PA", "Panasonic");
 			SHORT_BRAND_NAMES.put("PB", "PCBOX");
@@ -434,14 +458,18 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("PE", "PEAQ");
 			SHORT_BRAND_NAMES.put("PG", "Pentagram");
 			SHORT_BRAND_NAMES.put("PH", "Philips");
+      SHORT_BRAND_NAMES.put("4P", "Philco");
 			SHORT_BRAND_NAMES.put("1P", "Phicomm");
 			SHORT_BRAND_NAMES.put("PI", "Pioneer");
 			SHORT_BRAND_NAMES.put("PX", "Pixus");
 			SHORT_BRAND_NAMES.put("PL", "Polaroid");
 			SHORT_BRAND_NAMES.put("P5", "Polytron");
 			SHORT_BRAND_NAMES.put("P9", "Primepad");
+      SHORT_BRAND_NAMES.put("2P", "Prixton");
 			SHORT_BRAND_NAMES.put("P6", "Proline");
 			SHORT_BRAND_NAMES.put("PM", "Palm");
+      SHORT_BRAND_NAMES.put("0P", "POCO");
+      SHORT_BRAND_NAMES.put("3P", "Positivo BGH");
 			SHORT_BRAND_NAMES.put("PO", "phoneOne");
 			SHORT_BRAND_NAMES.put("PT", "Pantech");
 			SHORT_BRAND_NAMES.put("PY", "Ployer");
@@ -466,6 +494,8 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("QO", "Qumo");
 			SHORT_BRAND_NAMES.put("RA", "Ramos");
       SHORT_BRAND_NAMES.put("RE", "Realme");
+      SHORT_BRAND_NAMES.put("R8", "RED");
+      SHORT_BRAND_NAMES.put("R9", "Ravoz");
 			SHORT_BRAND_NAMES.put("RZ", "Razer");
 			SHORT_BRAND_NAMES.put("RC", "RCA Tablets");
 			SHORT_BRAND_NAMES.put("RB", "Readboy");
@@ -504,6 +534,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("SJ", "Silent Circle");
 			SHORT_BRAND_NAMES.put("1S", "Sigma");
 			SHORT_BRAND_NAMES.put("SN", "Sendo");
+      SHORT_BRAND_NAMES.put("0S", "SEMP TCL");
 			SHORT_BRAND_NAMES.put("S6", "Senseit");
 			SHORT_BRAND_NAMES.put("EW", "Senwa");
 			SHORT_BRAND_NAMES.put("SW", "Sky");
@@ -511,6 +542,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("SC", "Smartfren");
 			SHORT_BRAND_NAMES.put("SO", "Sony");
 			SHORT_BRAND_NAMES.put("OI", "Sonim");
+      SHORT_BRAND_NAMES.put("X2", "Soundmax");
 			SHORT_BRAND_NAMES.put("8S", "Soyes");
 			SHORT_BRAND_NAMES.put("SP", "Spice");
 			SHORT_BRAND_NAMES.put("6S", "Spectrum");
@@ -534,6 +566,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("S3", "SunVan");
 			SHORT_BRAND_NAMES.put("SZ", "Sumvision");
 			SHORT_BRAND_NAMES.put("SS", "SWISSMOBILITY");
+      SHORT_BRAND_NAMES.put("0W", "Swipe");
 			SHORT_BRAND_NAMES.put("10", "Simbans");
 			SHORT_BRAND_NAMES.put("X1", "Safaricom");
 			SHORT_BRAND_NAMES.put("TA", "Tesla");
@@ -546,7 +579,9 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("TB", "Tecno Mobile");
 			SHORT_BRAND_NAMES.put("TP", "TechPad");
 			SHORT_BRAND_NAMES.put("TD", "Tesco");
+      SHORT_BRAND_NAMES.put("T0", "TD Systems");
 			SHORT_BRAND_NAMES.put("TI", "TIANYU");
+      SHORT_BRAND_NAMES.put("2T", "Tinai");
 			SHORT_BRAND_NAMES.put("TG", "Telego");
 			SHORT_BRAND_NAMES.put("TL", "Telefunken");
 			SHORT_BRAND_NAMES.put("T2", "Telenor");
@@ -554,6 +589,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("TN", "Thomson");
 			SHORT_BRAND_NAMES.put("TQ", "Timovi");
 			SHORT_BRAND_NAMES.put("TY", "Tooky");
+      SHORT_BRAND_NAMES.put("0T", "Tone");
 			SHORT_BRAND_NAMES.put("T1", "Tolino");
 			SHORT_BRAND_NAMES.put("T9", "Top House");
 			SHORT_BRAND_NAMES.put("TO", "Toplux");
@@ -567,6 +603,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("1T", "Turbo");
 			SHORT_BRAND_NAMES.put("11", "True");
 			SHORT_BRAND_NAMES.put("TV", "TVC");
+      SHORT_BRAND_NAMES.put("TW", "TWM");
 			SHORT_BRAND_NAMES.put("TX", "TechniSat");
 			SHORT_BRAND_NAMES.put("TZ", "teXet");
 			SHORT_BRAND_NAMES.put("UC", "U.S. Cellular");
@@ -610,6 +647,8 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("V1", "Voto");
 			SHORT_BRAND_NAMES.put("VO", "Voxtel");
 			SHORT_BRAND_NAMES.put("VF", "Vodafone");
+      SHORT_BRAND_NAMES.put("VM", "Vodacom");
+      SHORT_BRAND_NAMES.put("V0", "VKworld");
 			SHORT_BRAND_NAMES.put("VY", "Voyo");
 			SHORT_BRAND_NAMES.put("VZ", "Vizio");
 			SHORT_BRAND_NAMES.put("VW", "Videoweb");
@@ -655,6 +694,7 @@ public class DeviceMixin {
 			SHORT_BRAND_NAMES.put("ZN", "Zen");
 			SHORT_BRAND_NAMES.put("ZY", "Zync");
 			SHORT_BRAND_NAMES.put("ZQ", "ZYQ");
+      SHORT_BRAND_NAMES.put("XS", "Xshitou");
 			SHORT_BRAND_NAMES.put("XT", "X-TIGI");
 			SHORT_BRAND_NAMES.put("XB", "NEXBOX");
 

@@ -26,6 +26,8 @@ public class Detection {
 	private static Pattern androidMobilePattern = Pattern.compile(
 			"(?:^|[^A-Z_-])(?:Android( [\\.0-9]+)?; Mobile;)",
 			Pattern.CASE_INSENSITIVE);
+	private static Pattern chromePattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]*)", Pattern.CASE_INSENSITIVE);
 	private static Pattern chromeSmartphonePattern = Pattern.compile(
 			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* Mobile)",
 			Pattern.CASE_INSENSITIVE);
@@ -106,12 +108,14 @@ public class Detection {
 		// 'Mobile'. If it is present the device should be a smartphone,
 		// otherwise it's a tablet. See
 		// https://developer.chrome.com/multidevice/user-agent#chrome_for_android_user_agent
+		// Note: We do not check for browser (family) here, as there might be
+		// mobile apps using Chrome, that won't have a detected browser, but
+		// can still be detected. So we check the useragent for Chrome instead.
 		if (type == null && this.operatingSystem != null
 				&& this.operatingSystem.getFamily().orElse("").equals("Android")
 				&& this.client != null
 				&& this.client.getType().equals("browser")
-				&& ((Browser) this.client).getFamily().isPresent()
-				&& ((Browser) this.client).getFamily().get().equals("Chrome")) {
+				&& chromePattern.matcher(userAgent).find()) {
 			if (chromeSmartphonePattern.matcher(userAgent).find()) {
 				type = "smartphone";
 			} else if (chromeTabletPattern.matcher(userAgent).find()) {

@@ -37,7 +37,7 @@ public class TabletTest extends AbstractTest {
 		FIXTURES = new ArrayList<>();
 		List<String> fixtureFiles = Arrays.asList("fixtures/tablet.yml",
 				"fixtures/tablet-1.yml", "fixtures/tablet-2.yml",
-				"fixtures/tablet-3.yml");
+				"fixtures/tablet-3.yml", "fixtures/tablet-4.yml");
 		for (String fixtureFile : fixtureFiles) {
 			InputStream inputStream = TabletTest.class.getClassLoader()
 					.getResourceAsStream(fixtureFile);
