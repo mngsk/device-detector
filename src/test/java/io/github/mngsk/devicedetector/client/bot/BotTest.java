@@ -19,7 +19,6 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.github.mngsk.devicedetector.Detection;
 import io.github.mngsk.devicedetector.DeviceDetector;
 import io.github.mngsk.devicedetector.DeviceDetector.DeviceDetectorBuilder;
-import io.github.mngsk.devicedetector.client.bot.BotFixture;
 
 public class BotTest {
 

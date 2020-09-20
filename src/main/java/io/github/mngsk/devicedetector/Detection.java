@@ -10,7 +10,6 @@ import org.apache.maven.artifact.versioning.ComparableVersion;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.github.mngsk.devicedetector.client.Client;
-import io.github.mngsk.devicedetector.client.browser.Browser;
 import io.github.mngsk.devicedetector.device.Device;
 import io.github.mngsk.devicedetector.operatingsystem.OperatingSystem;
 import io.github.mngsk.devicedetector.operatingsystem.VendorFragmentParser;
