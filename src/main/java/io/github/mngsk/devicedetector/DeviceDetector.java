@@ -23,6 +23,7 @@ import io.github.mngsk.devicedetector.device.CarDeviceParser;
 import io.github.mngsk.devicedetector.device.ConsoleDeviceParser;
 import io.github.mngsk.devicedetector.device.Device;
 import io.github.mngsk.devicedetector.device.MobileDeviceParser;
+import io.github.mngsk.devicedetector.device.NotebookDeviceParser;
 import io.github.mngsk.devicedetector.device.PortableMediaPlayerDeviceParser;
 import io.github.mngsk.devicedetector.device.TelevisionDeviceParser;
 import io.github.mngsk.devicedetector.operatingsystem.OperatingSystem;
@@ -85,6 +86,7 @@ public class DeviceDetector {
 		private boolean enableMobiles = true;
 		private boolean enablePortableMediaPlayers = true;
 		private boolean enableTelevisions = true;
+		private boolean enableNotebooks = true;
 
 		private boolean enableOperatingSystems = true;
 
@@ -111,6 +113,7 @@ public class DeviceDetector {
 			this.enableMobiles = true;
 			this.enablePortableMediaPlayers = true;
 			this.enableTelevisions = true;
+			this.enableNotebooks = true;
 			return this;
 		}
 
@@ -141,6 +144,11 @@ public class DeviceDetector {
 
 		public DeviceDetectorBuilder enableTelevisions() {
 			this.enableTelevisions = true;
+			return this;
+		}
+
+		public DeviceDetectorBuilder enableNotebooks() {
+			this.enableNotebooks = true;
 			return this;
 		}
 
@@ -209,6 +217,7 @@ public class DeviceDetector {
 			this.enableMobiles = false;
 			this.enablePortableMediaPlayers = false;
 			this.enableTelevisions = false;
+			this.enableNotebooks = false;
 			return this;
 		}
 
@@ -239,6 +248,11 @@ public class DeviceDetector {
 
 		public DeviceDetectorBuilder disableTelevisions() {
 			this.enableTelevisions = false;
+			return this;
+		}
+
+		public DeviceDetectorBuilder disableNotebooks() {
+			this.enableNotebooks = false;
 			return this;
 		}
 
@@ -300,6 +314,9 @@ public class DeviceDetector {
 			List<AbstractDeviceParser> deviceParsers = new ArrayList<>();
 			if (this.enableTelevisions) {
 				deviceParsers.add(new TelevisionDeviceParser(objectMapper));
+			}
+			if (this.enableNotebooks) {
+				deviceParsers.add(new NotebookDeviceParser(objectMapper));
 			}
 			if (this.enableConsoles) {
 				deviceParsers.add(new ConsoleDeviceParser(objectMapper));

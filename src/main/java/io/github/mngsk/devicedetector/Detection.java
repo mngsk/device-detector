@@ -53,7 +53,8 @@ public class Detection {
 			"Meizu Browser", "UC Browser Mini", "Firefox Focus", "Faux Browser",
 			"Wear Internet Browser", "Minimo", "mCent", "Aloha Browser Lite",
 			"Super Fast Browser", "EUI Browser", "eZ Browser",
-			"UC Browser Turbo", "Delta Browser", "START Internet Browser");
+			"UC Browser Turbo", "Delta Browser", "START Internet Browser",
+			"Quark", "Yaani Browser");
 	private static List<String> desktopOperatingSystems = Arrays.asList(
 			"AmigaOS", "IBM", "GNU/Linux", "Mac", "Unix", "Windows", "BeOS",
 			"Chrome OS");
@@ -279,6 +280,12 @@ public class Detection {
 	@JsonIgnore
 	public boolean isCamera() {
 		return this.device != null ? this.device.getType().equals("camera")
+				: false;
+	}
+
+	@JsonIgnore
+	public boolean isNotebook() {
+		return this.device != null ? this.device.getType().equals("notebook")
 				: false;
 	}
 
