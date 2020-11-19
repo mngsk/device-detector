@@ -28,7 +28,7 @@ public class Detection {
 	private static Pattern chromePattern = Pattern.compile(
 			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]*)", Pattern.CASE_INSENSITIVE);
 	private static Pattern chromeSmartphonePattern = Pattern.compile(
-			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* Mobile)",
+			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* (?:Mobile|eliboM))",
 			Pattern.CASE_INSENSITIVE);
 	private static Pattern chromeTabletPattern = Pattern.compile(
 			"(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* (?!Mobile))",
