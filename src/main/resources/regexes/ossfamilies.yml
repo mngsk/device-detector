@@ -29,6 +29,8 @@ BeOS:
 
 Chrome OS:
   - Chrome OS
+  - SeewoOS
+  - FydeOS
 
 Firefox OS:
   - Firefox OS
@@ -47,6 +49,7 @@ IBM:
 
 iOS:
   - iOS
+  - watchOS
 
 RISC OS:
   - RISC OS
@@ -56,16 +59,21 @@ GNU/Linux:
   - BackTrack
   - CentOS
   - Debian
+  - Deepin
   - Fedora
+  - Fenix
+  - Freebox
   - Gentoo
   - GNU/Linux
   - Knoppix
   - Kubuntu
   - Lubuntu
+  - Mageia
   - Mandriva
   - Mint
   - Ordissimo
   - Red Hat
+  - Rosa
   - Sabayon
   - Sailfish OS
   - Slackware
@@ -84,6 +92,7 @@ Mobile Gaming Console:
 Real-time OS:
   - MTK / Nucleus
   - ThreadX
+  - MRE
 
 Other Mobile:
   - Bada
@@ -125,3 +134,6 @@ Windows Mobile:
   - Windows Mobile
   - Windows Phone
   - Windows RT
+
+Other Smart TV:
+  - Whale OS

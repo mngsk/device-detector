@@ -1,8 +1,17 @@
 
-- regex: arm
+- regex: arm|aarch64|Watch ?OS|Watch1,[12]
   name: ARM
 
-- regex: WOW64|x64|win64|amd64|x86_64
+- regex: mips
+  name: MIPS
+
+- regex: sh4
+  name: SuperH
+
+- regex: arm|aarch64|Watch ?OS|Watch1,[12]
+  name: ARM
+
+- regex: WOW64|x64|win64|amd64|x86_?64
   name: x64
 
 - regex: i[0-9]86|i86pc

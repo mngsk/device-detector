@@ -5,6 +5,190 @@
 # @license http://www.gnu.org/licenses/lgpl.html LGPL v3 or later
 ###############
 
+
+# Flow (https://www.ekioh.com/)
+- regex: 'Flow/(?:(\d+[\.\d]+))'
+  name: 'Flow'
+  version: '$1'
+  engine:
+    default: 'EkiohFlow'
+- regex: 'Ekioh/(?:(\d+[\.\d]+))'
+  name: 'Flow'
+  version: '$1'
+  engine:
+    default: 'EkiohFlow'
+
+# xStand (https://www.adnx.com/)
+- regex: 'xStand/(\d+[\.\d]+)'
+  name: 'xStand'
+  version: '$1'
+  engine:
+    default: 'Webkit'
+
+# Biyubi (http://www.biyubi.com/)
+- regex: 'Biyubi/(\d+[\.\d]+)'
+  name: 'Biyubi'
+  version: '$1'
+
+# Perfect Browser (http://www.perfectbrowser.com/)
+- regex: '(?:Perfect%20Browser(?:-iPad)?|Perfect(?:BrowserPro)?)/(\d+[\.\d]+)'
+  name: 'Perfect Browser'
+  version: '$1'
+  engine:
+    default: 'Webkit'
+
+# Phantom Browser (https://www.lg.com/)
+- regex: 'Browser/Phantom/V(\d+[\.\d]+)'
+  name: 'Phantom Browser'
+  version: '$1'
+
+# AwoX (https://www.awox.com.tr/)
+- regex: 'AwoX(?:/(\d+[\.\d]+))? Browser'
+  name: 'AwoX'
+  version: '$1'
+
+# Zetakey (https://www.zetakey.com/)
+- regex: 'Zetakey/(\d+[\.\d]+)'
+  name: 'Zetakey'
+  version: '$1'
+  engine:
+    default: 'Webkit'
+
+# PlayFree Browser
+- regex: 'PlayFreeBrowser/(?:(\d+[\.\d]+))?'
+  name: 'PlayFree Browser'
+  version: '$1'
+
+# Chim Lac (https://chimlac.com.vn/)
+- regex: '(?:chimlac_browser|chimlac)/(?:(\d+[\.\d]+))'
+  name: 'Chim Lac'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Odin (https://www.hisense.com/)
+- regex: 'Odin/(?:(\d+[\.\d]+))'
+  name: 'Odin'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# T-Browser (https://play.google.com/store/apps/details?id=com.tcl.browser)
+- regex: 'Tbrowser/(\d+[\.\d]+)'
+  name: 'T-Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# SFive (https://sfive.vn/)
+- regex: 'SFive(?:_Android)?/.+ Chrome/(\d+[\.\d]+)'
+  name: 'SFive'
+  version: '$1'
+  engine:
+    default: 'Blink'
+- regex: 'SFive_IOS/(\d+[\.\d]+)'
+  name: 'SFive'
+  version: '$1'
+
+# Navigateur Web
+- regex: 'Navigateur web/(?:(\d+[\.\d]+))?'
+  name: 'Navigateur Web'
+  version: '$1'
+
+#Seraphic Sraf (https://www.seraphic-corp.com/)
+- regex: 'Sraf(?:[/ ](\d+[\.\d]+))?'
+  name: 'Seraphic Sraf'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Seewo Browser (http://e.seewo.com/)
+- regex: 'SeewoBrowser/(?:(\d+[\.\d]+))?'
+  name: 'Seewo Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Kode Browser (https://www.kodebrowser.com/ | https://play.google.com/store/apps/details?id=com.app.downloadmanager | https://apps.apple.com/us/app/kode-browser-fast-private/id625458492)
+- regex: '(?:Kode(?:iOS)?/(?:(\d+[\.\d]+))?|TansoDL)'
+  name: 'Kode Browser'
+  version: '$1'
+
+# UR Browser (https://www.ur-browser.com/)
+- regex: 'UR/(?:(\d+[\.\d]+))'
+  name: 'UR Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Smart Lenovo Browser (https://www.lenovo.com.cn/)
+- regex: 'Chrome/.+ SLBrowser/(?:(\d+[\.\d]+))?'
+  name: 'Smart Lenovo Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+- regex: 'SLBrowser/(?:(\d+[\.\d]+))?'
+  name: 'Smart Lenovo Browser'
+  version: '$1'
+
+# Browzar (https://www.browzar.com/)
+- regex: 'Browzar'
+  name: 'Browzar'
+  version: ''
+
+# Stargon (http://www.stargon.org/ | https://play.google.com/store/apps/details?id=net.onecook.browser)
+- regex: 'Stargon/(?:(\d+[\.\d]+))?'
+  name: 'Stargon'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# NFS Browser (https://github.com/nfschina/nfs-browser)
+- regex: 'NFSBrowser/(?:(\d+[\.\d]+))?'
+  name: 'NFS Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Borealis Navigator (https://binaryoutcast.com/projects/borealis/)
+- regex: 'Borealis/(\d+[\.\d]+)'
+  name: 'Borealis Navigator'
+  version: '$1'
+
+# Yolo Browser
+- regex: 'YoloBrowser/(?:(\d+[\.\d]+))?'
+  name: 'Yolo Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Phoenix Browser (http://phoenix-browser.com/ | https://play.google.com/store/apps/details?id=com.transsion.phoenix)
+- regex: 'PHX/(?:(\d+[\.\d]+))?'
+  name: 'Phoenix Browser'
+  version: '$1'
+
+# PrivacyWall (https://play.google.com/store/apps/details?id=org.privacywall.browser)
+- regex: 'PrivacyWall/(?:(\d+[\.\d]+))?'
+  name: 'PrivacyWall'
+  version: '$1'
+
+# Ghostery Privacy Browser (https://play.google.com/store/apps/details?id=com.ghostery.android.ghostery | https://apps.apple.com/us/app/ghostery-privacy-browser/id472789016)
+- regex: 'Ghostery:?(\d+[\.\d]+)?'
+  name: 'Ghostery Privacy Browser'
+  version: '$1'
+
+# Yaani Browser
+- regex: 'Firefox/.*(?:Turkcell-)?YaaniBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Yaani Browser'
+  version: '$1'
+  engine:
+    default: 'Gecko'
+- regex: '(?:Turkcell-)?YaaniBrowser(?:/(\d+[\.\d]+))?'
+  name: 'Yaani Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
 # Safe Exam Browser (https://safeexambrowser.org/)
 - regex: 'SEB/(?:(\d+[\.\d]+))?'
   name: 'Safe Exam Browser'
@@ -272,6 +456,27 @@
 # hola! Browser (https://hola.org/browser)
 - regex: 'Chrome/.+ Hola(?:/(\d+[\.\d]+))?'
   name: 'hola! Browser'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# Slimjet (https://slimjet.com)
+- regex: 'Slimjet/(?:(\d+[\.\d]+))'
+  name: 'Slimjet'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# 7Star
+- regex: '7Star/(?:(\d+[\.\d]+))'
+  name: '7Star'
+  version: '$1'
+  engine:
+    default: 'Blink'
+
+# MxNitro
+- regex: 'MxNitro/(?:(\d+[\.\d]+))'
+  name: 'MxNitro'
   version: '$1'
   engine:
     default: 'Blink'
@@ -569,7 +774,7 @@
   version: '$1'
 
 # t-online.de Browser (https://www.t-online.de/computer/browser/)
-- regex: 'TO-Browser(?:/TOB(\d+[\.\d]+))?'
+- regex: '(?:TO-Browser/TOB|DT-Browser/DTB)(\d+[\.\d]+)'
   name: 't-online.de Browser'
   version: '$1'
 
@@ -722,6 +927,11 @@
 - regex: 'Obigo|Teleca'
   name: 'Obigo'
   version: ''
+
+# UC Browser HD
+- regex: 'UCBrowserHD/(\d[\d\.]+)'
+  name: 'UC Browser HD'
+  version: '$1'
 
 #UC Browser Mini
 - regex: 'UCMini(?:[ /]?(\d+[\.\d]+))?'
@@ -893,13 +1103,6 @@
   engine:
     default: 'Blink'
 
-# Yaani Browser
-- regex: 'YaaniBrowser(?:/(\d+[\.\d]+))?'
-  name: 'Yaani Browser'
-  version: '$1'
-  engine:
-    default: 'Blink'
-
 #Vivaldi
 - regex: 'Vivaldi(?:/(\d+[\.\d]+))?'
   name: 'Vivaldi'
@@ -927,7 +1130,7 @@
   version: '$1'
 
 #Maxthon
-- regex: '(?:Maxthon|MxBrowser)[ /](\d+[\.\d]+)'
+- regex: '(?:Maxthon(?:%20Browser)?|MxBrowser(?:-inhouse|-iPhone)?)[ /](\d+[\.\d]+)'
   name: 'Maxthon'
   version: '$1'
   engine:
@@ -991,6 +1194,11 @@
 # Sogou Explorer
 - regex: 'SE (\d+[\.\d]+)'
   name: 'Sogou Explorer'
+  version: '$1'
+
+# QQ Browser Lite
+- regex: 'QQBrowserLite/([\d\.]+)'
+  name: 'QQ Browser Lite'
   version: '$1'
 
 # QQ Browser Mini
@@ -1481,7 +1689,7 @@
   name: 'iCab Mobile'
   version: '$1'
   engine:
-     default: 'WebKit'
+    default: 'WebKit'
 
 #iCab
 - regex: 'iCab(?:[ /](\d+[\.\d]+))?'
@@ -1499,6 +1707,13 @@
   engine:
     default: '' # multi engine
 
+# Crazy Browser
+- regex: 'Crazy Browser (\d+[\.\d]+)'
+  name: 'Crazy Browser'
+  version: '$1'
+  engine:
+    default: 'Trident'
+
 #Internet Explorer
 - regex: 'IEMobile[ /](\d+[\.\d]+)'
   name: 'IE Mobile'
@@ -1512,22 +1727,22 @@
     default: 'Trident'
 - regex: 'MSIE.*Trident/4.0'
   name: 'Internet Explorer'
-  version: 8.0
+  version: '8.0'
   engine:
     default: 'Trident'
 - regex: 'MSIE.*Trident/5.0'
   name: 'Internet Explorer'
-  version: 9.0
+  version: '9.0'
   engine:
     default: 'Trident'
 - regex: 'MSIE.*Trident/6.0'
   name: 'Internet Explorer'
-  version: 10.0
+  version: '10.0'
   engine:
     default: 'Trident'
 - regex: 'Trident/[78].0'
   name: 'Internet Explorer'
-  version: 11.0
+  version: '11.0'
   engine:
     default: 'Trident'
 - regex: 'MSIE (\d+[\.\d]+)'
@@ -1612,8 +1827,8 @@
   name: 'Off By One'
   version: ''
 
-#Oregano
-- regex: 'Oregano(?:[ /](\d+[\.\d]+))?'
+#Oregano (https://oregan.net/)
+- regex: '(?:Oregano|OreganMediaBrowser)(?:[ /](\d+[\.\d]+))?'
   name: 'Oregano'
   version: '$1'
 
@@ -1631,13 +1846,6 @@
 - regex: 'SEMC-Browser(?:[/ ](\d+[\.\d]+))?'
   name: 'SEMC-Browser'
   version: '$1'
-
-#Seraphic Sraf
-- regex: 'Sraf(?:[/ ](\d+[\.\d]+))?'
-  name: 'Seraphic Sraf'
-  version: '$1'
-  engine:
-    default: 'Blink'
 
 #Shiira
 - regex: 'Shiira(?:[/ ](\d+[\.\d]+))?'
@@ -1738,13 +1946,13 @@
   version: '$1'
   engine:
     default: 'WebKit'
-    
-#Dorado
+
+# Dorado
 - regex: 'Dorado WAP-Browser[/ ](\d+[\.\d]+)'
   name: 'Dorado'
   version: '$1'
 
-#NetSurf
+# NetSurf
 - regex: 'NetSurf(?:/(\d+[\.\d]+))?'
   name: 'NetSurf'
   version: '$1'
@@ -1772,4 +1980,8 @@
 - regex: 'GOGGalaxyClient/(?:(\d+[\.\d]+))?'
   name: 'GOG Galaxy'
   version: '$1'
-  
+
+# MAUI Wap Browser
+- regex: 'WAP Browser/MAUI|(?:\w+)?Maui Wap Browser|MAUI[- ]Browser'
+  name: 'MAUI WAP Browser'
+  version: ''
