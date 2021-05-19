@@ -42,7 +42,7 @@ public class OtherTest extends AbstractTest {
 				"fixtures/mobile_apps.yml", "fixtures/phablet.yml",
 				"fixtures/portable_media_player.yml",
 				"fixtures/smart_display.yml", "fixtures/smart_speaker.yml",
-				"fixtures/tv.yml", "fixtures/wearable.yml");
+				"fixtures/tv.yml", "fixtures/tv-1.yml", "fixtures/wearable.yml");
 		for (String fixtureFile : fixtureFiles) {
 			InputStream inputStream = OtherTest.class.getClassLoader()
 					.getResourceAsStream(fixtureFile);
