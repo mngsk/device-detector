@@ -65,6 +65,9 @@ public class Detection {
 			Pattern.CASE_INSENSITIVE);
 	private static List<String> tvBrowsers = Arrays.asList("Kylo",
 			"Espial TV Browser");
+	private static Pattern desktopPattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:Desktop (x(?:32|64)|WOW64);)",
+			Pattern.CASE_INSENSITIVE);
 	private static ComparableVersion v2 = new ComparableVersion("2.0");
 	private static ComparableVersion v3 = new ComparableVersion("3.0");
 	private static ComparableVersion v4 = new ComparableVersion("4.0");
@@ -206,6 +209,13 @@ public class Detection {
 		if (type == null && this.client != null
 				&& tvBrowsers.contains(this.client.getName().orElse(""))) {
 			type = "tv";
+		}
+
+		// Set device type desktop if string ua contains desktop
+		if (type != "desktop" && userAgent.contains("Desktop")) {
+			if (desktopPattern.matcher(userAgent).find()) {
+				type = "desktop";
+			}
 		}
 
 		// set device type to desktop for all devices running a desktop os that
