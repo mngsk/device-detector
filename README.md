@@ -17,7 +17,7 @@ Using DeviceDetector with Maven is quite easy. Just add the following dependency
 <dependency>
 	<groupId>io.github.mngsk</groupId>
 	<artifactId>device-detector</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.8</version>
 </dependency>
 ```
 
