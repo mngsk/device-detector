@@ -60,6 +60,9 @@ public class Detection {
 			"Chrome OS");
 	private static List<String> appleOperatingSystems = Arrays
 			.asList("Apple TV", "iOS", "Mac");
+	private static Pattern tvPattern = Pattern.compile(
+			"(?:^|[^A-Z_-])(?:SmartTV|Tizen.+ TV .+$)",
+			Pattern.CASE_INSENSITIVE);
 	private static List<String> tvBrowsers = Arrays.asList("Kylo",
 			"Espial TV Browser");
 	private static ComparableVersion v2 = new ComparableVersion("2.0");
@@ -191,6 +194,11 @@ public class Detection {
 
 		// All devices running Opera TV Store are assumed to be a tv
 		if (operaTvPattern.matcher(userAgent).find()) {
+			type = "tv";
+		}
+
+		// All devices running Tizen TV or SmartTV are assumed to be a tv
+		if (type == null && tvPattern.matcher(userAgent).find()) {
 			type = "tv";
 		}
 
