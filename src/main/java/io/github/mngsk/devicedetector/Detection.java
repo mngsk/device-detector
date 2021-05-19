@@ -46,7 +46,7 @@ public class Detection {
 			"360 Phone Browser", "Oculus Browser", "Puffin", "Skyfire",
 			"Mobile Safari", "Opera Mini", "Opera Mobile",
 			"DuckDuckGo Privacy Browser", "dbrowser", "Streamy", "B-Line",
-			"Isivioo", "Firefox Mobile", "Coast", "Aloha Browser",
+			"Isivioo", "Firefox Mobile", "Coast", "CoolBrowser",
 			"Sailfish Browser", "Samsung Browser", "Firefox Rocket",
 			"Web Explorer", "Hawk Turbo Browser", "Nox Browser",
 			"Huawei Browser", "vivo Browser", "Realme Browser", "COS Browser",
@@ -54,7 +54,10 @@ public class Detection {
 			"Wear Internet Browser", "Minimo", "mCent", "Aloha Browser Lite",
 			"Super Fast Browser", "EUI Browser", "eZ Browser",
 			"UC Browser Turbo", "Delta Browser", "START Internet Browser",
-			"Quark", "Yaani Browser");
+			"Quark", "Yaani Browser", "Japan Browser", "Ghostery Privacy Browser",
+			"PrivacyWall", "Stargon", "Kode Browser", "Perfect Browser",
+			"UC Browser HD", "SP Browser", "Cornowser", "Smooz", "GinxDroid Browser",
+			"Venus Browser");
 	private static List<String> desktopOperatingSystems = Arrays.asList(
 			"AmigaOS", "IBM", "GNU/Linux", "Mac", "Unix", "Windows", "BeOS",
 			"Chrome OS");
