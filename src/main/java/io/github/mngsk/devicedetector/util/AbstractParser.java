@@ -19,12 +19,17 @@ public abstract class AbstractParser<T> {
 		}
 
 		for (int i = 1; i <= 3; i++) {
-			if (item.indexOf("$" + i) == -1) {
-				continue;
+			String replacement = "";
+
+			if (item.indexOf("$" + i) > -1) {
+				try {
+					String group = matcher.group(i);
+					replacement = Optional.ofNullable(group).orElse("");
+				} catch (IndexOutOfBoundsException e) {
+					replacement = "";
+				}
 			}
 
-			String group = matcher.group(i);
-			String replacement = Optional.ofNullable(group).orElse("");
 			item = item.replace("$" + i, replacement);
 		}
 		return item.trim();
