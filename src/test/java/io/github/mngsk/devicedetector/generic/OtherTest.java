@@ -39,8 +39,8 @@ public class OtherTest extends AbstractTest {
 				"fixtures/car_browser.yml", "fixtures/console.yml",
 				"fixtures/desktop.yml", "fixtures/feature_phone.yml",
 				"fixtures/feed_reader.yml", "fixtures/mediaplayer.yml",
-				"fixtures/mobile_apps.yml", "fixtures/phablet.yml",
-				"fixtures/portable_media_player.yml",
+				"fixtures/mobile_apps.yml", "fixtures/peripheral.yml",
+				"fixtures/phablet.yml", "fixtures/portable_media_player.yml",
 				"fixtures/smart_display.yml", "fixtures/smart_speaker.yml",
 				"fixtures/tv.yml", "fixtures/tv-1.yml", "fixtures/wearable.yml");
 		for (String fixtureFile : fixtureFiles) {
