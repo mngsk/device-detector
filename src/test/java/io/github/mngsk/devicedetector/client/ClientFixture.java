@@ -4,24 +4,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ClientFixture {
 
-	@JsonProperty("user_agent")
-	private String userAgent;
-	private Client client;
+  @JsonProperty("user_agent")
+  private String userAgent;
 
-	public String getUserAgent() {
-		return this.userAgent;
-	}
+  private Client client;
 
-	public void setUserAgent(String userAgent) {
-		this.userAgent = userAgent;
-	}
+  public String getUserAgent() {
+    return this.userAgent;
+  }
 
-	public Client getClient() {
-		return this.client;
-	}
+  public void setUserAgent(String userAgent) {
+    this.userAgent = userAgent;
+  }
 
-	public void setClient(Client client) {
-		this.client = client;
-	}
+  public Client getClient() {
+    return this.client;
+  }
 
+  public void setClient(Client client) {
+    this.client = client;
+  }
 }

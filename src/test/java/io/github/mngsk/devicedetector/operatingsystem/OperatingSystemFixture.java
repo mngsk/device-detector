@@ -4,25 +4,25 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OperatingSystemFixture {
 
-	@JsonProperty("user_agent")
-	private String userAgent;
-	@JsonProperty("os")
-	private OperatingSystem operatingSystem;
+  @JsonProperty("user_agent")
+  private String userAgent;
 
-	public String getUserAgent() {
-		return this.userAgent;
-	}
+  @JsonProperty("os")
+  private OperatingSystem operatingSystem;
 
-	public void setUserAgent(String userAgent) {
-		this.userAgent = userAgent;
-	}
+  public String getUserAgent() {
+    return this.userAgent;
+  }
 
-	public OperatingSystem getOperatingSystem() {
-		return this.operatingSystem;
-	}
+  public void setUserAgent(String userAgent) {
+    this.userAgent = userAgent;
+  }
 
-	public void setOperatingSystem(OperatingSystem operatingSystem) {
-		this.operatingSystem = operatingSystem;
-	}
+  public OperatingSystem getOperatingSystem() {
+    return this.operatingSystem;
+  }
 
+  public void setOperatingSystem(OperatingSystem operatingSystem) {
+    this.operatingSystem = operatingSystem;
+  }
 }

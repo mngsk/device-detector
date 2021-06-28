@@ -4,24 +4,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BrowserFixture {
 
-	@JsonProperty("user_agent")
-	private String userAgent;
-	private Browser client;
+  @JsonProperty("user_agent")
+  private String userAgent;
 
-	public String getUserAgent() {
-		return this.userAgent;
-	}
+  private Browser client;
 
-	public void setUserAgent(String userAgent) {
-		this.userAgent = userAgent;
-	}
+  public String getUserAgent() {
+    return this.userAgent;
+  }
 
-	public Browser getClient() {
-		return this.client;
-	}
+  public void setUserAgent(String userAgent) {
+    this.userAgent = userAgent;
+  }
 
-	public void setClient(Browser client) {
-		this.client = client;
-	}
+  public Browser getClient() {
+    return this.client;
+  }
 
+  public void setClient(Browser client) {
+    this.client = client;
+  }
 }

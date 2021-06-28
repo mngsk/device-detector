@@ -4,24 +4,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DeviceFixture {
 
-	@JsonProperty("user_agent")
-	private String userAgent;
-	private Device device;
+  @JsonProperty("user_agent")
+  private String userAgent;
 
-	public String getUserAgent() {
-		return this.userAgent;
-	}
+  private Device device;
 
-	public void setUserAgent(String userAgent) {
-		this.userAgent = userAgent;
-	}
+  public String getUserAgent() {
+    return this.userAgent;
+  }
 
-	public Device getDevice() {
-		return this.device;
-	}
+  public void setUserAgent(String userAgent) {
+    this.userAgent = userAgent;
+  }
 
-	public void setDevice(Device device) {
-		this.device = device;
-	}
+  public Device getDevice() {
+    return this.device;
+  }
 
+  public void setDevice(Device device) {
+    this.device = device;
+  }
 }

@@ -22,43 +22,41 @@ import io.github.mngsk.devicedetector.DeviceDetector.DeviceDetectorBuilder;
 
 public class OperatingSystemTest {
 
-	private static List<OperatingSystemFixture> FIXTURES;
+  private static List<OperatingSystemFixture> FIXTURES;
 
-	private static DeviceDetector DD;
+  private static DeviceDetector DD;
 
-	@BeforeAll
-	public static void beforeAll() {
-		ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
-		objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
-		objectMapper.addMixIn(OperatingSystem.class,
-				OperatingSystemMixin.class);
+  @BeforeAll
+  public static void beforeAll() {
+    ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
+    objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+    objectMapper.addMixIn(OperatingSystem.class, OperatingSystemMixin.class);
 
-		String fixtureFile = "fixtures/oss/oss.yml";
-		InputStream inputStream = OperatingSystemTest.class.getClassLoader()
-				.getResourceAsStream(fixtureFile);
-		CollectionType listType = objectMapper.getTypeFactory()
-				.constructCollectionType(List.class,
-						OperatingSystemFixture.class);
-		try {
-			FIXTURES = objectMapper.readValue(inputStream, listType);
-		} catch (IOException e) {
-			throw new RuntimeException("Could not load " + fixtureFile, e);
-		}
+    String fixtureFile = "fixtures/oss/oss.yml";
+    InputStream inputStream =
+        OperatingSystemTest.class.getClassLoader().getResourceAsStream(fixtureFile);
+    CollectionType listType =
+        objectMapper
+            .getTypeFactory()
+            .constructCollectionType(List.class, OperatingSystemFixture.class);
+    try {
+      FIXTURES = objectMapper.readValue(inputStream, listType);
+    } catch (IOException e) {
+      throw new RuntimeException("Could not load " + fixtureFile, e);
+    }
 
-		DD = new DeviceDetectorBuilder().disableEverything()
-				.enableOperatingSystems().build();
-	}
+    DD = new DeviceDetectorBuilder().disableEverything().enableOperatingSystems().build();
+  }
 
-	public static Stream<OperatingSystemFixture> fixtureProvider() {
-		return FIXTURES.stream();
-	}
+  public static Stream<OperatingSystemFixture> fixtureProvider() {
+    return FIXTURES.stream();
+  }
 
-	@ParameterizedTest
-	@MethodSource("fixtureProvider")
-	public void fixtures(OperatingSystemFixture fixture) {
-		Detection d = DD.detect(fixture.getUserAgent());
-		assertEquals(fixture.getOperatingSystem(), d.getOperatingSystem().get(),
-				fixture.getUserAgent());
-	}
-
+  @ParameterizedTest
+  @MethodSource("fixtureProvider")
+  public void fixtures(OperatingSystemFixture fixture) {
+    Detection d = DD.detect(fixture.getUserAgent());
+    assertEquals(
+        fixture.getOperatingSystem(), d.getOperatingSystem().get(), fixture.getUserAgent());
+  }
 }

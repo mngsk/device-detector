@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BotProducerMixin {
 
-	@JsonCreator
-	public BotProducerMixin(@JsonProperty("name") String name,
-			@JsonProperty("url") String url) {
-	}
-
+  @JsonCreator
+  public BotProducerMixin(@JsonProperty("name") String name, @JsonProperty("url") String url) {}
 }

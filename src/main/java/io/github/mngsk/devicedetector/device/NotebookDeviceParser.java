@@ -7,17 +7,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class NotebookDeviceParser extends AbstractDeviceParser {
 
-  private Pattern notebookPattern = Pattern.compile(
-      "(?:^|[^A-Z0-9\\-_]|[^A-Z0-9\\-]_|sprd-)(?:FBMD/)",
-      Pattern.CASE_INSENSITIVE);
+  private Pattern notebookPattern =
+      Pattern.compile("(?:^|[^A-Z0-9\\-_]|[^A-Z0-9\\-]_|sprd-)(?:FBMD/)", Pattern.CASE_INSENSITIVE);
 
-	public NotebookDeviceParser() {
-		super("regexes/device/notebooks.yml");
-	}
+  public NotebookDeviceParser() {
+    super("regexes/device/notebooks.yml");
+  }
 
-	public NotebookDeviceParser(ObjectMapper objectMapper) {
-		super("regexes/device/notebooks.yml", objectMapper);
-	}
+  public NotebookDeviceParser(ObjectMapper objectMapper) {
+    super("regexes/device/notebooks.yml", objectMapper);
+  }
 
   @Override
   public Optional<Device> parse(String userAgent) {
@@ -27,5 +26,4 @@ public class NotebookDeviceParser extends AbstractDeviceParser {
 
     return super.parse(userAgent);
   }
-
 }

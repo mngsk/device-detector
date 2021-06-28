@@ -22,41 +22,39 @@ import io.github.mngsk.devicedetector.DeviceDetector.DeviceDetectorBuilder;
 
 public class PersonalInformationManagerTest {
 
-	private static List<ClientFixture> FIXTURES;
+  private static List<ClientFixture> FIXTURES;
 
-	private static DeviceDetector DD;
+  private static DeviceDetector DD;
 
-	@BeforeAll
-	public static void beforeAll() {
-		ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
-		objectMapper.addMixIn(Client.class, ClientMixin.class);
+  @BeforeAll
+  public static void beforeAll() {
+    ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
+    objectMapper.addMixIn(Client.class, ClientMixin.class);
 
-		String fixtureFile = "fixtures/client/pim.yml";
-		InputStream inputStream = PersonalInformationManagerTest.class
-				.getClassLoader().getResourceAsStream(fixtureFile);
-		CollectionType listType = objectMapper.getTypeFactory()
-				.constructCollectionType(List.class, ClientFixture.class);
-		try {
-			FIXTURES = objectMapper.readValue(inputStream, listType);
-		} catch (IOException e) {
-			throw new RuntimeException("Could not load " + fixtureFile, e);
-		}
+    String fixtureFile = "fixtures/client/pim.yml";
+    InputStream inputStream =
+        PersonalInformationManagerTest.class.getClassLoader().getResourceAsStream(fixtureFile);
+    CollectionType listType =
+        objectMapper.getTypeFactory().constructCollectionType(List.class, ClientFixture.class);
+    try {
+      FIXTURES = objectMapper.readValue(inputStream, listType);
+    } catch (IOException e) {
+      throw new RuntimeException("Could not load " + fixtureFile, e);
+    }
 
-		DD = new DeviceDetectorBuilder().disableEverything()
-				.enablePersonalInformationManagers().build();
-	}
+    DD =
+        new DeviceDetectorBuilder().disableEverything().enablePersonalInformationManagers().build();
+  }
 
-	public static Stream<ClientFixture> fixtureProvider() {
-		return FIXTURES.stream();
-	}
+  public static Stream<ClientFixture> fixtureProvider() {
+    return FIXTURES.stream();
+  }
 
-	@ParameterizedTest
-	@MethodSource("fixtureProvider")
-	public void fixtures(ClientFixture fixture) {
-		Detection d = DD.detect(fixture.getUserAgent());
-		assertTrue(d.isPIM());
-		assertEquals(fixture.getClient(), d.getClient().get(),
-				fixture.getUserAgent());
-	}
-
+  @ParameterizedTest
+  @MethodSource("fixtureProvider")
+  public void fixtures(ClientFixture fixture) {
+    Detection d = DD.detect(fixture.getUserAgent());
+    assertTrue(d.isPIM());
+    assertEquals(fixture.getClient(), d.getClient().get(), fixture.getUserAgent());
+  }
 }

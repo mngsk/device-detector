@@ -4,14 +4,13 @@ import io.github.mngsk.devicedetector.client.ClientRegex;
 
 public class BrowserRegex extends ClientRegex {
 
-	private BrowserEngine engine;
+  private BrowserEngine engine;
 
-	public BrowserEngine getEngine() {
-		return this.engine;
-	}
+  public BrowserEngine getEngine() {
+    return this.engine;
+  }
 
-	public void setEngine(BrowserEngine engine) {
-		this.engine = engine;
-	}
-
+  public void setEngine(BrowserEngine engine) {
+    this.engine = engine;
+  }
 }

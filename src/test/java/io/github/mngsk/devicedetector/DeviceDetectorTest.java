@@ -10,33 +10,32 @@ import io.github.mngsk.devicedetector.DeviceDetector.DeviceDetectorBuilder;
 
 public class DeviceDetectorTest {
 
-	private static DeviceDetector DD;
+  private static DeviceDetector DD;
 
-	@BeforeAll
-	public static void beforeAll() {
-		DD = new DeviceDetectorBuilder().build();
-	}
+  @BeforeAll
+  public static void beforeAll() {
+    DD = new DeviceDetectorBuilder().build();
+  }
 
-	@Test
-	public void nonNullDetector() {
-		assertNotNull(DD);
-	}
+  @Test
+  public void nonNullDetector() {
+    assertNotNull(DD);
+  }
 
-	@Test
-	public void nullUserAgent() {
-		assertThrows(IllegalArgumentException.class, () -> DD.detect(null));
-	}
+  @Test
+  public void nullUserAgent() {
+    assertThrows(IllegalArgumentException.class, () -> DD.detect(null));
+  }
 
-	@Test
-	public void emptyUserAgent() {
-		assertThrows(IllegalArgumentException.class, () -> DD.detect(""));
-	}
+  @Test
+  public void emptyUserAgent() {
+    assertThrows(IllegalArgumentException.class, () -> DD.detect(""));
+  }
 
-	@Test
-	public void nonNullUserAgent() {
-		Detection d = DD.detect("12345");
+  @Test
+  public void nonNullUserAgent() {
+    Detection d = DD.detect("12345");
 
-		assertNotNull(d);
-	}
-
+    assertNotNull(d);
+  }
 }

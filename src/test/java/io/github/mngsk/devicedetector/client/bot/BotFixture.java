@@ -4,24 +4,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BotFixture {
 
-	@JsonProperty("user_agent")
-	private String userAgent;
-	private Bot bot;
+  @JsonProperty("user_agent")
+  private String userAgent;
 
-	public String getUserAgent() {
-		return this.userAgent;
-	}
+  private Bot bot;
 
-	public void setUserAgent(String userAgent) {
-		this.userAgent = userAgent;
-	}
+  public String getUserAgent() {
+    return this.userAgent;
+  }
 
-	public Bot getBot() {
-		return this.bot;
-	}
+  public void setUserAgent(String userAgent) {
+    this.userAgent = userAgent;
+  }
 
-	public void setBot(Bot bot) {
-		this.bot = bot;
-	}
+  public Bot getBot() {
+    return this.bot;
+  }
 
+  public void setBot(Bot bot) {
+    this.bot = bot;
+  }
 }
