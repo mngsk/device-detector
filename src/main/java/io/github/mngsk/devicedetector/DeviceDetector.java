@@ -22,10 +22,11 @@ import io.github.mngsk.devicedetector.device.CameraDeviceParser;
 import io.github.mngsk.devicedetector.device.CarDeviceParser;
 import io.github.mngsk.devicedetector.device.ConsoleDeviceParser;
 import io.github.mngsk.devicedetector.device.Device;
+import io.github.mngsk.devicedetector.device.HbbTvDeviceParser;
 import io.github.mngsk.devicedetector.device.MobileDeviceParser;
 import io.github.mngsk.devicedetector.device.NotebookDeviceParser;
 import io.github.mngsk.devicedetector.device.PortableMediaPlayerDeviceParser;
-import io.github.mngsk.devicedetector.device.TelevisionDeviceParser;
+import io.github.mngsk.devicedetector.device.ShellTvDeviceParser;
 import io.github.mngsk.devicedetector.operatingsystem.OperatingSystem;
 import io.github.mngsk.devicedetector.operatingsystem.OperatingSystemParser;
 
@@ -313,7 +314,8 @@ public class DeviceDetector {
 
 			List<AbstractDeviceParser> deviceParsers = new ArrayList<>();
 			if (this.enableTelevisions) {
-				deviceParsers.add(new TelevisionDeviceParser(objectMapper));
+				deviceParsers.add(new HbbTvDeviceParser(objectMapper));
+				deviceParsers.add(new ShellTvDeviceParser(objectMapper));
 			}
 			if (this.enableNotebooks) {
 				deviceParsers.add(new NotebookDeviceParser(objectMapper));
