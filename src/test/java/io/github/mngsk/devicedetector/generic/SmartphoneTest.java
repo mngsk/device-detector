@@ -58,7 +58,9 @@ public class SmartphoneTest extends AbstractTest {
             "fixtures/smartphone-20.yml",
             "fixtures/smartphone-21.yml",
             "fixtures/smartphone-22.yml",
-            "fixtures/smartphone-23.yml");
+            "fixtures/smartphone-23.yml",
+            "fixtures/smartphone-24.yml",
+            "fixtures/smartphone-25.yml");
     for (String fixtureFile : fixtureFiles) {
       InputStream inputStream =
           SmartphoneTest.class.getClassLoader().getResourceAsStream(fixtureFile);

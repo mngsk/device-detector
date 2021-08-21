@@ -40,7 +40,8 @@ public class TabletTest extends AbstractTest {
             "fixtures/tablet-2.yml",
             "fixtures/tablet-3.yml",
             "fixtures/tablet-4.yml",
-            "fixtures/tablet-5.yml");
+            "fixtures/tablet-5.yml",
+            "fixtures/tablet-6.yml");
     for (String fixtureFile : fixtureFiles) {
       InputStream inputStream = TabletTest.class.getClassLoader().getResourceAsStream(fixtureFile);
       CollectionType listType =
