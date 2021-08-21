@@ -92,7 +92,8 @@ public class Detection {
           "Cornowser",
           "Smooz",
           "GinxDroid Browser",
-          "Venus Browser");
+          "Venus Browser",
+          "Arvin");
   private static List<String> desktopOperatingSystems =
       Arrays.asList("AmigaOS", "IBM", "GNU/Linux", "Mac", "Unix", "Windows", "BeOS", "Chrome OS");
   private static List<String> appleOperatingSystems = Arrays.asList("Apple TV", "iOS", "Mac");
