@@ -32,8 +32,6 @@ import io.github.mngsk.devicedetector.operatingsystem.OperatingSystemParser;
 
 public class DeviceDetector {
 
-  public static final String VERSION = "3.12.3";
-
   private List<AbstractDeviceParser> deviceParsers;
   private OperatingSystemParser operatingSystemParser;
   private List<AbstractClientParser<?>> clientParsers;
