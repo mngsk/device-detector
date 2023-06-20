@@ -8,6 +8,14 @@ Android:
   - RazoDroiD
   - Remix OS
   - YunOS
+  - GridOS
+  - Android TV
+  - ClearOS Mobile
+  - Bliss OS
+  - Revenge OS
+  - Lineage OS
+  - Sirin OS
+  - Resurrection Remix OS
 
 AmigaOS:
   - AmigaOS
@@ -29,6 +37,7 @@ BeOS:
 
 Chrome OS:
   - Chrome OS
+  - Chromium OS
   - SeewoOS
   - FydeOS
 
@@ -50,38 +59,74 @@ IBM:
 iOS:
   - iOS
   - watchOS
+  - tvOS
+  - iPadOS
 
 RISC OS:
   - RISC OS
 
 GNU/Linux:
   - Arch Linux
+  - Amazon Linux
   - BackTrack
   - CentOS
+  - CentOS Stream
+  - Caixa Mágica
+  - China OS
   - Debian
   - Deepin
+  - DVKBuntu
   - Fedora
   - Fenix
   - Freebox
+  - Foresight Linux
+  - Fuchsia
   - Gentoo
   - GNU/Linux
+  - HasCodingOS
+  - Kanotix
   - Knoppix
   - Kubuntu
+  - KreaTV
+  - LindowsOS
+  - Linspire
   - Lubuntu
+  - Lumin OS
+  - moonOS
   - Mageia
   - Mandriva
   - Mint
+  - Nova
   - Ordissimo
+  - OpenWrt
+  - Opera TV
+  - Pardus
+  - PCLinuxOS
+  - PureOS
+  - Plasma Mobile
   - Red Hat
+  - RedOS
   - Rosa
+  - Roku OS
+  - RouterOS
   - Sabayon
   - Sailfish OS
   - Slackware
   - SUSE
+  - TencentOS
+  - TmaxOS
   - Ubuntu
   - VectorLinux
   - Xubuntu
+  - Zenwalk
+  - ZorinOS
 
+Harmony:
+  - Harmony
+Kylin:
+  - Kylin
+UOS:
+  - UOS
 Mac:
   - Mac
 
@@ -93,6 +138,8 @@ Real-time OS:
   - MTK / Nucleus
   - ThreadX
   - MRE
+  - Java ME
+  - REX
 
 Other Mobile:
   - Bada
@@ -101,6 +148,7 @@ Other Mobile:
   - palmOS
   - Tizen
   - webOS
+  - TmaxOS
 
 Symbian:
   - Symbian

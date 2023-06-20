@@ -136,6 +136,15 @@ public class Detection {
       brand = vendorFragmentParser.parse(this.userAgent).orElse(null);
     }
 
+    // If it's fake UA then it's best not to identify it as Apple running Android OS
+    if (this.operatingSystem != null
+        && this.operatingSystem.getFamily().orElse("").equals("Android")
+        && brand != null && brand.equals("Apple")) {
+      type = null;
+      brand = null;
+      model = null;
+    }
+    
     // Assume all devices running iOS / Mac OS are from Apple
     if (brand == null) {
       if (this.operatingSystem != null
