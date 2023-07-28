@@ -2,6 +2,7 @@ package io.github.shtchp.devicedetector;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -15,29 +16,29 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Detection {
 
-  private static VendorFragmentParser vendorFragmentParser = new VendorFragmentParser();
-  private static Pattern touchEnabledPattern = Pattern.compile("(?:^|[^A-Z_-])(?:Touch)");
-  private static Pattern androidTabletPattern =
+  private static final VendorFragmentParser VENDOR_FRAGMENT_PARSER = new VendorFragmentParser();
+  private static final Pattern TOUCH_ENABLED_PATTERN = Pattern.compile("(?:^|[^A-Z_-])(?:Touch)");
+  private static final Pattern androidTabletPattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:Android( [\\.0-9]+)?; Tablet;)", Pattern.CASE_INSENSITIVE);
-  private static Pattern androidMobilePattern =
+  private static final Pattern androidMobilePattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:Android( [\\.0-9]+)?; Mobile;)", Pattern.CASE_INSENSITIVE);
-  private static Pattern chromePattern =
+  private static final Pattern chromePattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]*)", Pattern.CASE_INSENSITIVE);
-  private static Pattern chromeSmartphonePattern =
+  private static final Pattern chromeSmartphonePattern =
       Pattern.compile(
           "(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* (?:Mobile|eliboM))", Pattern.CASE_INSENSITIVE);
-  private static Pattern chromeTabletPattern =
+  private static final Pattern chromeTabletPattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:Chrome/[\\.0-9]* (?!Mobile))", Pattern.CASE_INSENSITIVE);
-  private static Pattern operaTabletPattern =
+  private static final Pattern operaTabletPattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:Opera Tablet)", Pattern.CASE_INSENSITIVE);
-  private static Pattern operaTvPattern =
+  private static final Pattern operaTvPattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:Opera TV Store)", Pattern.CASE_INSENSITIVE);
-  private static List<String> mobileDeviceTypes =
+  private static final List<String> mobileDeviceTypes =
       Arrays.asList(
           "feature phone", "smartphone", "tablet", "phablet", "camera", "portable media player");
-  private static List<String> nonMobileDeviceTypes =
+  private static final List<String> nonMobileDeviceTypes =
       Arrays.asList("tv", "smart display", "console");
-  private static List<String> mobileOnlyBrowsers =
+  private static final List<String> mobileOnlyBrowsers =
       Arrays.asList(
           "360 Phone Browser",
           "Oculus Browser",
@@ -93,18 +94,18 @@ public class Detection {
           "GinxDroid Browser",
           "Venus Browser",
           "Arvin");
-  private static List<String> desktopOperatingSystems =
+  private static final List<String> desktopOperatingSystems =
       Arrays.asList("AmigaOS", "IBM", "GNU/Linux", "Mac", "Unix", "Windows", "BeOS", "Chrome OS");
-  private static List<String> appleOperatingSystems = Arrays.asList("Apple TV", "iOS", "Mac");
-  private static Pattern tvPattern =
+  private static final List<String> appleOperatingSystems = Arrays.asList("Apple TV", "iOS", "Mac");
+  private static final Pattern tvPattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:SmartTV|Tizen.+ TV .+$)", Pattern.CASE_INSENSITIVE);
-  private static List<String> tvBrowsers = Arrays.asList("Kylo", "Espial TV Browser");
-  private static Pattern desktopPattern =
+  private static final List<String> tvBrowsers = Arrays.asList("Kylo", "Espial TV Browser");
+  private static final Pattern desktopPattern =
       Pattern.compile("(?:^|[^A-Z_-])(?:Desktop (x(?:32|64)|WOW64);)", Pattern.CASE_INSENSITIVE);
-  private static ComparableVersion v2 = new ComparableVersion("2.0");
-  private static ComparableVersion v3 = new ComparableVersion("3.0");
-  private static ComparableVersion v4 = new ComparableVersion("4.0");
-  private static ComparableVersion v8 = new ComparableVersion("8");
+  private static final ComparableVersion v2 = new ComparableVersion("2.0");
+  private static final ComparableVersion v3 = new ComparableVersion("3.0");
+  private static final ComparableVersion v4 = new ComparableVersion("4.0");
+  private static final ComparableVersion v8 = new ComparableVersion("8");
 
   private final String userAgent;
 
@@ -132,13 +133,13 @@ public class Detection {
     }
 
     if (brand == null) {
-      brand = vendorFragmentParser.parse(this.userAgent).orElse(null);
+      brand = VENDOR_FRAGMENT_PARSER.parse(this.userAgent).orElse(null);
     }
 
     // If it's fake UA then it's best not to identify it as Apple running Android OS
     if (this.operatingSystem != null
-        && this.operatingSystem.getFamily().orElse("").equals("Android")
-        && brand != null && brand.equals("Apple")) {
+            && "Android".equals(this.operatingSystem.getFamily().orElse(""))
+            && "Apple".equals(brand)) {
       type = null;
       brand = null;
       model = null;
@@ -161,9 +162,9 @@ public class Detection {
     // can still be detected. So we check the useragent for Chrome instead.
     if (type == null
         && this.operatingSystem != null
-        && this.operatingSystem.getFamily().orElse("").equals("Android")
+        && "Android".equals(this.operatingSystem.getFamily().orElse(""))
         && this.client != null
-        && this.client.getType().equals("browser")
+        && "browser".equals(this.client.getType())
         && chromePattern.matcher(userAgent).find()) {
       if (chromeSmartphonePattern.matcher(userAgent).find()) {
         type = "smartphone";
@@ -201,7 +202,7 @@ public class Detection {
     // Android 2.X and 4.X+ are unknown
     if (type == null
         && this.operatingSystem != null
-        && this.operatingSystem.getFamily().orElse("").equals("Android")
+        && "Android".equals(this.operatingSystem.getFamily().orElse(""))
         && osVersion.isPresent()) {
       if (osVersion.get().compareTo(v2) < 0) {
         type = "smartphone";
@@ -212,10 +213,9 @@ public class Detection {
 
     // All detected feature phones running android are more likely a
     // smartphone
-    if (type != null
-        && type.equals("feature phone")
-        && this.operatingSystem != null
-        && this.operatingSystem.getFamily().orElse("").equals("Android")) {
+    if ("feature phone".equals(type)
+            && this.operatingSystem != null
+            && "Android".equals(this.operatingSystem.getFamily().orElse(""))) {
       type = "smartphone";
     }
 
@@ -231,11 +231,11 @@ public class Detection {
     // tablets.
     if (type == null
         && this.operatingSystem != null
-        && (this.operatingSystem.getName().equals("Windows RT")
-            || (this.operatingSystem.getName().equals("Windows")
+        && ("Windows RT".equals(this.operatingSystem.getName())
+            || ("Windows".equals(this.operatingSystem.getName())
                 && osVersion.isPresent()
                 && osVersion.get().compareTo(v8) >= 0))
-        && touchEnabledPattern.matcher(userAgent).find()) {
+        && TOUCH_ENABLED_PATTERN.matcher(userAgent).find()) {
       type = "tablet";
     }
 
@@ -257,7 +257,7 @@ public class Detection {
     }
 
     // Set device type desktop if string ua contains desktop
-    if (type != "desktop" && userAgent.contains("Desktop")) {
+    if (!Objects.equals(type, "desktop") && userAgent.contains("Desktop")) {
       if (desktopPattern.matcher(userAgent).find()) {
         type = "desktop";
       }
@@ -295,73 +295,73 @@ public class Detection {
 
   @JsonIgnore
   public boolean isTouchEnabled() {
-    return touchEnabledPattern.matcher(userAgent).find();
+    return TOUCH_ENABLED_PATTERN.matcher(userAgent).find();
   }
 
   @JsonIgnore
   public boolean isSmartphone() {
-    return this.device != null ? this.device.getType().equals("smartphone") : false;
+    return this.device != null && "smartphone".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isFeaturePhone() {
-    return this.device != null ? this.device.getType().equals("feature phone") : false;
+    return this.device != null && "feature phone".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isTablet() {
-    return this.device != null ? this.device.getType().equals("tablet") : false;
+    return this.device != null && "tablet".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isPhablet() {
-    return this.device != null ? this.device.getType().equals("phablet") : false;
+    return this.device != null && "phablet".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isConsole() {
-    return this.device != null ? this.device.getType().equals("console") : false;
+    return this.device != null && "console".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isPortableMediaPlayer() {
-    return this.device != null ? this.device.getType().equals("portable media player") : false;
+    return this.device != null && "portable media player".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isCarBrowser() {
-    return this.device != null ? this.device.getType().equals("car browser") : false;
+    return this.device != null && "car browser".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isCamera() {
-    return this.device != null ? this.device.getType().equals("camera") : false;
+    return this.device != null && "camera".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isNotebook() {
-    return this.device != null ? this.device.getType().equals("notebook") : false;
+    return this.device != null && "notebook".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isTV() {
-    return this.device != null ? this.device.getType().equals("tv") : false;
+    return this.device != null && "tv".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isSmartDisplay() {
-    return this.device != null ? this.device.getType().equals("smart display") : false;
+    return this.device != null && "smart display".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean isSmartSpeaker() {
-    return this.device != null ? this.device.getType().equals("smart speaker") : false;
+    return this.device != null && "smart speaker".equals(this.device.getType());
   }
 
   @JsonIgnore
   public boolean usesMobileBrowser() {
     return this.client != null
-        && this.client.getType().equals("browser")
+        && "browser".equals(this.client.getType())
         && mobileOnlyBrowsers.contains(this.client.getName().orElse(""));
   }
 
@@ -401,37 +401,37 @@ public class Detection {
 
   @JsonIgnore
   public boolean isBot() {
-    return this.client != null ? this.client.getType().equals("bot") : false;
+    return this.client != null && "bot".equals(this.client.getType());
   }
 
   @JsonIgnore
   public boolean isBrowser() {
-    return this.client != null ? this.client.getType().equals("browser") : false;
+    return this.client != null && "browser".equals(this.client.getType());
   }
 
   @JsonIgnore
   public boolean isFeedReader() {
-    return this.client != null ? this.client.getType().equals("feed reader") : false;
+    return this.client != null && "feed reader".equals(this.client.getType());
   }
 
   @JsonIgnore
   public boolean isMobileApp() {
-    return this.client != null ? this.client.getType().equals("mobile app") : false;
+    return this.client != null && "mobile app".equals(this.client.getType());
   }
 
   @JsonIgnore
   public boolean isPIM() {
-    return this.client != null ? this.client.getType().equals("pim") : false;
+    return this.client != null && "pim".equals(this.client.getType());
   }
 
   @JsonIgnore
   public boolean isLibrary() {
-    return this.client != null ? this.client.getType().equals("library") : false;
+    return this.client != null && "library".equals(this.client.getType());
   }
 
   @JsonIgnore
   public boolean isMediaPlayer() {
-    return this.client != null ? this.client.getType().equals("mediaplayer") : false;
+    return this.client != null && "mediaplayer".equals(this.client.getType());
   }
 
   @Override
