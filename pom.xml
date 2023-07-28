@@ -3,14 +3,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.github.mngsk</groupId>
+  <groupId>io.github.shtchp</groupId>
   <artifactId>device-detector</artifactId>
   <version>1.0.10</version>
   <packaging>jar</packaging>
 
   <name>Device Detector</name>
   <description>The Universal Device Detection library that parses User Agents and detects devices (desktop, tablet, mobile, tv, cars, console, etc.), clients (browsers, feed readers, media players, PIMs, ...), operating systems, brands and models.</description>
-  <url>https://github.com/mngsk/device-detector</url>
+  <url>https://github.com/shtchp321/device-detector</url>
 
   <licenses>
     <license>
@@ -28,9 +28,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/mngsk/device-detector.git</connection>
-    <developerConnection>scm:git:ssh://github.com:mngsk/device-detector.git</developerConnection>
-    <url>https://github.com/mngsk/device-detector/tree/master</url>
+    <connection>scm:git:git://github.com/shtchp321/device-detector.git</connection>
+    <developerConnection>scm:git:ssh://github.com:shtchp321/device-detector.git</developerConnection>
+    <url>https://github.com/shtchp321/device-detector/tree/master</url>
     <tag>HEAD</tag>
   </scm>
 

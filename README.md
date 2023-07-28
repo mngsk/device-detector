@@ -15,7 +15,7 @@ Using DeviceDetector with Maven is quite easy. Just add the following dependency
 
 ```xml
 <dependency>
-	<groupId>io.github.mngsk</groupId>
+	<groupId>io.github.shtchp</groupId>
 	<artifactId>device-detector</artifactId>
 	<version>1.0.10</version>
 </dependency>
@@ -24,40 +24,38 @@ Using DeviceDetector with Maven is quite easy. Just add the following dependency
 And use some code like this one:
 
 ```java
-import io.github.mngsk.devicedetector.DeviceDetector;
-import io.github.mngsk.devicedetector.DeviceDetector.DeviceDetectorBuilder;
 
-DeviceDetector dd = new DeviceDetectorBuilder().build();
+
+DeviceDetector dd=new DeviceDetectorBuilder().build();
 
 // Assuming `request` is an instance of HttServletRequest
-String userAgent = request.getHeader("User-Agent");
+        String userAgent=request.getHeader("User-Agent");
 
-Detection detection = dd.detect(userAgent);
-System.out.println(detection.getDevice().map(d -> d.toString()).orElse("unknown"));
-System.out.println(detection.getOperatingSystem().map(d -> d.toString()).orElse("unknown"));
-System.out.println(detection.getClient().map(d -> d.toString()).orElse("unknown"));
+        Detection detection=dd.detect(userAgent);
+        System.out.println(detection.getDevice().map(d->d.toString()).orElse("unknown"));
+        System.out.println(detection.getOperatingSystem().map(d->d.toString()).orElse("unknown"));
+        System.out.println(detection.getClient().map(d->d.toString()).orElse("unknown"));
 
-if (detection.getDevice().isPresent()) {
-	System.out.println(detection.getDevice().get().getType()); // bot, browser, feed reader...
-	System.out.println(detection.getDevice().get().getBrand().orElse("unknown"));
-	System.out.println(detection.getDevice().get().getModel().orElse("unknown"));
-}
+        if(detection.getDevice().isPresent()){
+        System.out.println(detection.getDevice().get().getType()); // bot, browser, feed reader...
+        System.out.println(detection.getDevice().get().getBrand().orElse("unknown"));
+        System.out.println(detection.getDevice().get().getModel().orElse("unknown"));
+        }
 ```
 
 Instead of using the full power of DeviceDetector it might in some cases be better to use only specific parsers.
 If you aim to check if a given user agent is a bot and don't require any of the other information, you can enable only the bot parser.
 
 ```java
-import io.github.mngsk.devicedetector.DeviceDetector;
-import io.github.mngsk.devicedetector.DeviceDetector.DeviceDetectorBuilder;
 
-DeviceDetector dd = new DeviceDetectorBuilder().disableEverything().enableBots().build();
 
-Detection detection = dd.detect(userAgent);
+DeviceDetector dd=new DeviceDetectorBuilder().disableEverything().enableBots().build();
 
-if (detection.isBot()) {
-	System.out.println(detection.getClient().get().getName().get());
-}
+        Detection detection=dd.detect(userAgent);
+
+        if(detection.isBot()){
+        System.out.println(detection.getClient().get().getName().get());
+        }
 ```
 
 ### Caching
