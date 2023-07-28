@@ -20,31 +20,6 @@
     </license>
   </licenses>
 
-  <developers>
-    <developer>
-      <name>Arturo González</name>
-      <url>https://mngsk.github.io</url>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:git://github.com/shtchp321/device-detector.git</connection>
-    <developerConnection>scm:git:ssh://github.com:shtchp321/device-detector.git</developerConnection>
-    <url>https://github.com/shtchp321/device-detector/tree/master</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>

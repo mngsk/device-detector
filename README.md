@@ -11,17 +11,7 @@ This project is a Java adaptation of [Matomo Device Detector](https://github.com
 
 ## Usage
 
-Using DeviceDetector with Maven is quite easy. Just add the following dependency in your project's pom.xml:
-
-```xml
-<dependency>
-	<groupId>io.github.shtchp</groupId>
-	<artifactId>device-detector</artifactId>
-	<version>1.0.10</version>
-</dependency>
-```
-
-And use some code like this one:
+Use some code like this one:
 
 ```java
 
